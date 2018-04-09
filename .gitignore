@@ -2,3 +2,4 @@
 /server/bin/log
 /server/bin/*.exe
 /server/*.exe
+/server/bin/c.json
