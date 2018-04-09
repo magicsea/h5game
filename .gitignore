@@ -1,0 +1,4 @@
+/server/pkg
+/server/bin/log
+/server/bin/*.exe
+/server/*.exe
