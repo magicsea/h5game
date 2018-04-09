@@ -1,0 +1,1 @@
+macro_cclog("outmap")

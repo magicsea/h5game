@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>fontname</key>
+	<string>隶书</string>
+	<key>wingame</key>
+	<string>恭喜你，通过了一关</string>
+	<key>losegame</key>
+	<string>抱歉，你灭团了</string>
+	<key>winall</key>
+	<string>恭喜，你通关了，太牛X了！！</string>
+	<key>startgame</key>
+	<string>开始游戏</string>
+	<key>closegame</key>
+	<string>结束游戏</string>
+	<key>continue</key>
+	<string>link to</string>
+	<key>ip</key>
+	<string>192.168.123.1</string>
+</dict>

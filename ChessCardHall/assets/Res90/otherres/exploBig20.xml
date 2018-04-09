@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <plists>
+        <plist>exploBig20.plist</plist>
+    </plists>
+    <animations>
+        <animation>
+            <name>ani</name>
+            <delay>0.05</delay>
+            <spriteFrame>Block_0</spriteFrame>
+            <spriteFrame>Block_1</spriteFrame>
+            <spriteFrame>Block_2</spriteFrame>
+            <spriteFrame>Block_3</spriteFrame>
+            <spriteFrame>Block_4</spriteFrame>
+            <spriteFrame>Block_5</spriteFrame>
+            <spriteFrame>Block_6</spriteFrame>
+            <spriteFrame>Block_7</spriteFrame>
+            <spriteFrame>Block_8</spriteFrame>
+            <spriteFrame>Block_9</spriteFrame>
+            <spriteFrame>Block_10</spriteFrame>
+            <spriteFrame>Block_11</spriteFrame>
+            <spriteFrame>Block_12</spriteFrame>
+            <spriteFrame>Block_13</spriteFrame>
+        </animation>
+    </animations>
+    <sprites>
+        <sprite>Block_0</sprite>
+        <sprite>Block_1</sprite>
+        <sprite>Block_2</sprite>
+        <sprite>Block_3</sprite>
+        <sprite>Block_4</sprite>
+        <sprite>Block_5</sprite>
+        <sprite>Block_6</sprite>
+        <sprite>Block_7</sprite>
+        <sprite>Block_8</sprite>
+        <sprite>Block_9</sprite>
+        <sprite>Block_10</sprite>
+        <sprite>Block_11</sprite>
+        <sprite>Block_12</sprite>
+        <sprite>Block_13</sprite>
+    </sprites>
+</root>

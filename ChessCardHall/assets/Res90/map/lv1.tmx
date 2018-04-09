@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="24" height="16" tilewidth="20" tileheight="20">
+ <tileset firstgid="1" name="tileall" tilewidth="20" tileheight="20">
+  <image source="tileall.png" width="200" height="20"/>
+  <tile id="0">
+   <properties>
+    <property name="attr" value="15"/>
+   </properties>
+  </tile>
+  <tile id="1">
+   <properties>
+    <property name="attr" value="11"/>
+   </properties>
+  </tile>
+  <tile id="2">
+   <properties>
+    <property name="attr" value="0"/>
+   </properties>
+  </tile>
+  <tile id="3">
+   <properties>
+    <property name="attr" value="1"/>
+   </properties>
+  </tile>
+  <tile id="4">
+   <properties>
+    <property name="attr" value="1"/>
+   </properties>
+  </tile>
+  <tile id="5">
+   <properties>
+    <property name="attr" value="15"/>
+   </properties>
+  </tile>
+  <tile id="6">
+   <properties>
+    <property name="attr" value="15"/>
+   </properties>
+  </tile>
+  <tile id="7">
+   <properties>
+    <property name="attr" value="15"/>
+   </properties>
+  </tile>
+  <tile id="8">
+   <properties>
+    <property name="attr" value="11"/>
+   </properties>
+  </tile>
+  <tile id="9">
+   <properties>
+    <property name="attr" value="0"/>
+   </properties>
+  </tile>
+ </tileset>
+ <layer name="floor" width="24" height="16">
+  <data encoding="base64" compression="zlib">
+   eJzjYmBg4BrFo3gUj+JRPOIwACajDwE=
+  </data>
+ </layer>
+ <layer name="back" width="24" height="16">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUDGfAggNTC7DiwKNg8AMAaowANw==
+  </data>
+ </layer>
+ <layer name="center" width="24" height="16">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgegJHKmN7mj4JRQC5gQsLofCZcmnCow6aP3LQ8VPIArd2Gbt5gMh8AJMsAXg==
+  </data>
+ </layer>
+ <layer name="front" width="24" height="16">
+  <data encoding="base64" compression="zlib">
+   eJxjYBj6gJnGZtLDfFpgUtxCif5RMHgAJfE2GudDG7CRoQcAsnMAbQ==
+  </data>
+ </layer>
+ <objectgroup name="obj1" width="24" height="16">
+  <properties>
+   <property name="type" value="1"/>
+  </properties>
+  <object name="base" x="202" y="283" width="59" height="36">
+   <properties>
+    <property name="bstype" value="1"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>
