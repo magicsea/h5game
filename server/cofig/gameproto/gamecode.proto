@@ -1,0 +1,22 @@
+syntax = "proto3";
+package gameproto;
+
+enum C2GS_CMD {
+C2GS_NONE = 0;
+C2S_LOGIN = 1 ;//  登陆
+C2S_Test = 10;//
+
+C2S_HEART_INFO = 254  ;//  心跳包
+C2S_ACK = 255 ;//  确认包
+}
+
+enum GS2C_CMD {
+GS2C_NONE = 0;
+S2C_CONFIRM = 1  ;//确认信息
+
+S2C_LOGIN_END = 2  ;//登陆结束
+S2C_LOGIN_CHAR_INFO = 3  ;//用户信息
+
+S2C_Test = 10;//
+
+}

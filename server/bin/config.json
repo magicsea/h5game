@@ -1,0 +1,77 @@
+{
+	"ver":"1.0",
+	"db":{
+			"game":"root:tcg123456@tcp(192.168.3.194:3306)/tcg_new"
+	},
+	"redis":{
+		"addr":"127.0.0.1:6379",
+		"password":"",
+		"poolsize":10,
+		"dbs":[0,1,2,3,4]
+	},
+	"design":{
+		"path":"../config/csv/"
+	},
+	"config":{
+		"log":{
+			"level":"info",
+			"path":"log",
+			"flag":18
+		},
+		"proto":"json",
+		"_comment": "配置静态地址,value空表示本进程",
+		"remote":{
+			"center":"127.0.0.1:8090"
+		},
+		
+		"_comment": "当前进程启动的所有服务配置,remoteAddr空表示本进程",
+		"local":{
+			"login":{
+					"serviceName":"login",
+					"serviceType":"login",
+					"remoteAddr":"",
+					"conf":{
+							"httpAddr":"127.0.0.1:9900"
+					}
+			},
+			"center":{
+					"serviceName":"center",
+					"serviceType":"center",
+					"remoteAddr":"127.0.0.1:8090"
+			},
+			"lobby":{
+					"serviceName":"lobby",
+					"serviceType":"lobby",
+					"remoteAddr":"127.0.0.1:8091"
+			},
+			"session":{
+					"serviceName":"session",
+					"serviceType":"session",
+					"remoteAddr":""
+			},
+			"gate1":{
+					"serviceName":"gate1",
+					"serviceType":"gate",
+					"remoteAddr":"127.0.0.1:8070",
+					"conf":{
+							"MaxConnNum":1000,
+							"WsAddr":":7201",
+							"WsAddrOut":"127.0.0.1:7201",
+							"TcpAddr":":7200"
+					}
+			},
+			"game1":{
+					"serviceName":"game1",
+					"serviceType":"game",
+					"remoteAddr":""
+			},
+			"battle1":{
+					"serviceName":"battle1",
+					"serviceType":"battle",
+					"remoteAddr":""
+			}
+		}	
+	}	
+
+}
+	

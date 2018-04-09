@@ -1,0 +1,41 @@
+{
+	"ver":"1.0",
+	"config":{
+		"log":{
+			"level":"debug",
+			"path":"log",
+			"flag":18
+		},
+		"_comment": "配置静态地址,value空表示本进程",
+		"remote":{
+			"center":"127.0.0.1:8090",
+			"session":"127.0.0.1:8091"
+		},
+		
+		"_comment": "当前进程启动的所有服务配置,remoteAddr空表示本进程",
+		"local":{
+			"gate1":{
+					"serviceName":"gate1",
+					"serviceType":"gate",
+					"remoteAddr":"127.0.0.1:8071",
+					"conf":{
+							"MaxConnNum":1000,
+							"WsAddr":"",
+							"TcpAddr":"127.0.0.1:7201"
+					}
+			},
+			"gate2":{
+					"serviceName":"gate2",
+					"serviceType":"gate",
+					"remoteAddr":"127.0.0.1:8072",
+					"conf":{
+							"MaxConnNum":1000,
+							"WsAddr":"",
+							"TcpAddr":"127.0.0.1:7202"
+					}
+			}
+		}	
+	}	
+
+}
+	

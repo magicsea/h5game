@@ -1,0 +1,39 @@
+syntax = "proto3";
+package gameproto;
+
+
+//错误类型
+enum ErrorCode {
+	OK = 0;
+	Fail = 1;
+	Error = 2;
+	ServerFull = 3;
+	KeyError = 4;
+	NoFoundTarget = 5;
+
+	//old code 
+	IMPORTANT_WRONG_HEAD = -1000 ;// # 包头不存在
+
+	RESOURCE_VITALITY_ERROR = 1002  ;// # 体力不足
+	RESOURCE_GOLD_ERROR = 1003   ;//# 金币不足
+	RESOURCE_RMB_ERROR = 1004  ;// # 钻石不足
+
+	GUILD_EXIT_CHAIRMAN_ERROR = 1022  ;// # 您必须先转移会长
+
+	UNKNOWN_ERROR = -9999 ;//未知错误
+}
+message C2S_TestMsg {
+	uint32 id = 1;
+}
+message S2C_TestMsg {
+	uint32 id = 1;
+}
+message S2C_ConfirmInfo{
+    int32 msgHead = 1;
+    int32 code = 2;
+}
+
+enum BattleType {
+	PVE = 0;
+	PVP = 1;
+}

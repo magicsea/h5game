@@ -1,0 +1,39 @@
+{
+	"ver":"1.0",
+	"config":{
+		"log":{
+			"level":"debug",
+			"path":"log",
+			"flag":18
+		},
+		"_comment": "配置静态地址,value空表示本进程",
+		"remote":{
+			"center":"127.0.0.1:8090",
+			"session":"127.0.0.1:8091"
+		},
+		
+		"_comment": "当前进程启动的所有服务配置,remoteAddr空表示本进程",
+		"local":{
+			"login":{
+					"serviceName":"login",
+					"serviceType":"login",
+					"remoteAddr":"",
+					"conf":{
+							"httpAddr":"127.0.0.1:8080"
+					}
+			},
+			"center":{
+					"serviceName":"center",
+					"serviceType":"center",
+					"remoteAddr":"127.0.0.1:8090"
+			},
+			"session":{
+					"serviceName":"session",
+					"serviceType":"session",
+					"remoteAddr":"127.0.0.1:8091"
+			}
+		}	
+	}	
+
+}
+	
