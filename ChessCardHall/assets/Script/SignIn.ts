@@ -57,6 +57,9 @@ export default class Signln extends cc.Component {
 
         //游客登录
         vv.btnClick(this.btnTouristSignln, () => {
+
+            vv.showTip("暂时不支持游客登录，请先注册")
+            return
             vv.pauseTouch();//禁止交互操作
             var userDataTourist = cc.sys.localStorage.getItem('userDataTourist');
             if (userDataTourist) {
