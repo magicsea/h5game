@@ -1,28 +1,40 @@
 {
 	"ver":"1.0",
+	"db":{
+		"game":"root:tcg123456@tcp(192.168.3.194:3306)/tcg_new"
+	},
+	"redis":{
+		"addr":"127.0.0.1:6379",
+		"password":"",
+		"poolsize":10,
+		"dbs":[0,1,2,3,4]
+	},
 	"config":{
 		"log":{
-			"level":"debug",
+			"level":"info",
 			"path":"log",
 			"flag":18
 		},
+		"proto":"json",
 		"_comment": "配置静态地址,value空表示本进程",
 		"remote":{
 			"center":"127.0.0.1:8090",
-			"session":"127.0.0.1:8091"
+			"session":"127.0.0.1:8091",
+			"lobby":"127.0.0.1:8092"
 		},
 		
 		"_comment": "当前进程启动的所有服务配置,remoteAddr空表示本进程",
 		"local":{
+
+			"battle1":{
+				"serviceName":"battle1",
+				"serviceType":"battle",
+				"remoteAddr":"127.0.0.1:9401"
+			},
 			"game1":{
 					"serviceName":"game1",
 					"serviceType":"game",
 					"remoteAddr":"127.0.0.1:9501"
-			},
-			"game2":{
-					"serviceName":"game2",
-					"serviceType":"game",
-					"remoteAddr":"127.0.0.1:9502"
 			}
 		}	
 	}	

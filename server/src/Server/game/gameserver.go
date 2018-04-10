@@ -15,6 +15,7 @@ import (
 
 type GameService struct {
 	service.ServiceData
+	isReg bool
 }
 
 type PlayerInitEnd struct {
@@ -45,22 +46,55 @@ func (s *GameService) OnInit() {
 }
 
 func (s *GameService) OnStart(as *service.ActorService) {
-	as.RegisterMsg(reflect.TypeOf(&msgs.CreatePlayer{}), s.OnCreatePlayer) //登录
-	as.RegisterMsg(reflect.TypeOf(&msgs.Tick{}), s.OnTick)                 //定时任务
-	as.RegisterMsg(reflect.TypeOf(&PlayerInitEnd{}), s.OnPlayerInitEnd)    //玩家初始化完成
+	as.RegisterMsg(reflect.TypeOf(&msgs.CreatePlayer{}), s.OnCreatePlayer)    //登录
+	as.RegisterMsg(reflect.TypeOf(&msgs.Tick{}), s.OnTick)                    //定时任务
+	as.RegisterMsg(reflect.TypeOf(&PlayerInitEnd{}), s.OnPlayerInitEnd)       //玩家初始化完成
+	as.RegisterMsg(reflect.TypeOf(&msgs.AddServiceRep{}), s.OnRegOK)          //注册完成
+	as.RegisterMsg(reflect.TypeOf(&actor.Terminated{}), s.OnDisconnectCenter) //被动断开服务器
 
 }
 
 func (s *GameService) OnRun() {
 	//注册到center
-	cluster.RegServerWork(&s.ServiceData, nil)
+	s.RegToCenter()
+	//cluster.RegServerWork(&s.ServiceData, nil)
 	//定时任务
 	util.StartLoopTask(time.Second*5, func() {
 		s.Pid.Tell(&msgs.Tick{}) //转主线程执行
 	})
 }
 
+//注册到中心服务器
+func (s *GameService) RegToCenter() {
+	//注册到center
+	r := cluster.GetServicePID("center")
+	msg := msgs.AddService{
+		ServiceName: s.Name,
+		ServiceType: s.TypeName,
+		Pid:         s.GetPID(),
+		Values:      nil}
+	r.GetActorPID().Request(&msg, s.Pid)
+	log.Info("game RegToCenter !!!")
+}
+
+//注册成功
+func (s *GameService) OnRegOK(context service.Context) {
+	s.isReg = true
+	log.Info("game reg ok!!!")
+	context.Watch(context.Sender())
+}
+
+//从中心断开
+func (s *GameService) OnDisconnectCenter(context service.Context) {
+	s.isReg = false
+	log.Info("game OnDisconnectCenter !!!")
+}
+
 func (s *GameService) OnTick(context service.Context) {
+	if !s.isReg {
+		s.RegToCenter()
+		return
+	}
 	load := len(context.Children())
 	cluster.UpdateServiceLoad(s.Name, uint32(load), msgs.ServiceStateFree)
 }

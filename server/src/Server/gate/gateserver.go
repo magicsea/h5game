@@ -19,6 +19,7 @@ type GateService struct {
 	service.ServiceData
 	agents    map[uint64]*actor.PID
 	actorchan chan *AgentActor //传说创建actor
+	isReg     bool
 }
 
 //Service 获取服务对象
@@ -89,8 +90,10 @@ func (s *GateService) OnInit() {
 
 func (s *GateService) OnStart(as *service.ActorService) {
 	//as.RegisterMsg(reflect.TypeOf(&msgs.UserLogin{}), s.OnUserLogin) //注册登录
-	as.RegisterMsg(reflect.TypeOf(&msgs.Tick{}), s.OnTick) //定时任务
-	as.RegisterMsg(reflect.TypeOf(&msgs.Kick{}), s.OnKick) //踢人
+	as.RegisterMsg(reflect.TypeOf(&msgs.Tick{}), s.OnTick)                    //定时任务
+	as.RegisterMsg(reflect.TypeOf(&msgs.Kick{}), s.OnKick)                    //踢人
+	as.RegisterMsg(reflect.TypeOf(&msgs.AddServiceRep{}), s.OnRegOK)          //注册完成
+	as.RegisterMsg(reflect.TypeOf(&actor.Terminated{}), s.OnDisconnectCenter) //被动断开服务器
 
 	log.Info("gate start")
 	gate := &gfw.Gate{
@@ -113,16 +116,47 @@ func (s *GateService) OnStart(as *service.ActorService) {
 
 func (s *GateService) OnRun() {
 	//注册
-	valtcp := &msgs.ServiceValue{"TcpAddr", config.GetServiceConfigString(s.Name, "TcpAddrOut")}
-	valws := &msgs.ServiceValue{"WsAddr", config.GetServiceConfigString(s.Name, "WsAddrOut")}
-	cluster.RegServerWork(&s.ServiceData, []*msgs.ServiceValue{valtcp, valws})
+	s.RegToCenter()
 	//定时任务
 	util.StartLoopTask(time.Second*5, func() {
 		s.Pid.Tell(&msgs.Tick{}) //转主线程执行
 	})
 }
 
+//注册到中心服务器
+func (s *GateService) RegToCenter() {
+	//注册到center
+	valtcp := &msgs.ServiceValue{"TcpAddr", config.GetServiceConfigString(s.Name, "TcpAddrOut")}
+	valws := &msgs.ServiceValue{"WsAddr", config.GetServiceConfigString(s.Name, "WsAddrOut")}
+	//cluster.RegServerWork(&s.ServiceData, []*msgs.ServiceValue{valtcp, valws})
+	r := cluster.GetServicePID("center")
+	msg := msgs.AddService{
+		ServiceName: s.Name,
+		ServiceType: s.TypeName,
+		Pid:         s.GetPID(),
+		Values:      []*msgs.ServiceValue{valtcp, valws}}
+	r.GetActorPID().Request(&msg, s.Pid)
+	log.Info("GateService RegToCenter !!!")
+}
+
+//注册成功
+func (s *GateService) OnRegOK(context service.Context) {
+	s.isReg = true
+	log.Info("GateService reg ok!!!")
+	context.Watch(context.Sender())
+}
+
+//从中心断开
+func (s *GateService) OnDisconnectCenter(context service.Context) {
+	s.isReg = false
+	log.Info("GateService OnDisconnectCenter !!!")
+}
+
 func (s *GateService) OnTick(context service.Context) {
+	if !s.isReg {
+		s.RegToCenter()
+		return
+	}
 	load := len(s.agents)
 	cluster.UpdateServiceLoad(s.Name, uint32(load), msgs.ServiceStateFree)
 }

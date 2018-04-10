@@ -126,6 +126,10 @@ message AddService {
 	actor.PID pid = 3;
 	repeated ServiceValue values = 4;
 }
+
+message AddServiceRep {
+	GAErrorCode result = 1;
+}
 //发送成功的通用返回
 message SendOK {	
 }

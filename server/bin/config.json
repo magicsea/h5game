@@ -21,7 +21,7 @@
 		"proto":"json",
 		"_comment": "配置静态地址,value空表示本进程",
 		"remote":{
-			"center":"127.0.0.1:8090"
+
 		},
 		
 		"_comment": "当前进程启动的所有服务配置,remoteAddr空表示本进程",

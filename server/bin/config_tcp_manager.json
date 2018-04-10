@@ -1,27 +1,27 @@
 {
 	"ver":"1.0",
+	"redis":{
+		"addr":"127.0.0.1:6379",
+		"password":"",
+		"poolsize":10,
+		"dbs":[0,1,2,3,4]
+	},
 	"config":{
 		"log":{
-			"level":"debug",
+			"level":"info",
 			"path":"log",
 			"flag":18
 		},
 		"_comment": "配置静态地址,value空表示本进程",
 		"remote":{
 			"center":"127.0.0.1:8090",
-			"session":"127.0.0.1:8091"
+			"session":"127.0.0.1:8091",
+			"lobby":"127.0.0.1:8092"
 		},
 		
 		"_comment": "当前进程启动的所有服务配置,remoteAddr空表示本进程",
 		"local":{
-			"login":{
-					"serviceName":"login",
-					"serviceType":"login",
-					"remoteAddr":"",
-					"conf":{
-							"httpAddr":"127.0.0.1:8080"
-					}
-			},
+
 			"center":{
 					"serviceName":"center",
 					"serviceType":"center",

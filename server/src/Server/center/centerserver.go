@@ -1,9 +1,9 @@
 package center
 
 import (
+	"gameproto/msgs"
 	"github.com/magicsea/ganet/log"
 	"github.com/magicsea/ganet/service"
-	"gameproto/msgs"
 	"reflect"
 
 	"github.com/AsynkronIT/protoactor-go/actor"
@@ -46,8 +46,9 @@ func (s *CenterService) OnStart(as *service.ActorService) {
 
 //注册服务器
 func (s *CenterService) OnAddService(context service.Context) {
+
 	msg := context.Message().(*msgs.AddService)
-	log.Info("center.OnAddService:%s,%+v",msg.Pid.String(), msg.Values)
+	log.Info("center.OnAddService:%s,pid=%s,%+v", msg.ServiceName, msg.Pid.String(), msg.Values)
 	var group *ServiceGroup
 	if g, ok := s.serviceGroups[msg.ServiceType]; !ok {
 		group = new(ServiceGroup)
@@ -69,7 +70,7 @@ func (s *CenterService) OnAddService(context service.Context) {
 	group.AddService(node)                 //加入group
 	context.Watch(node.pid)                //监控
 
-	context.Tell(context.Sender(), &msgs.SendOK{})
+	context.Request(context.Sender(), &msgs.AddServiceRep{})
 	log.Info("center.OnAddService  OK:%s", msg.ServiceName)
 }
 
@@ -93,7 +94,7 @@ func (s *CenterService) OnChildServiceTerminated(context service.Context) {
 	log.Info("center.OnChildServiceTerminated:%+v", context.Message())
 
 	msg := context.Message().(*actor.Terminated)
-	//context.Unwatch(msg.Who)//需要主动unwatch???
+	//context.Unwatch(msg.Who) //需要主动unwatch???
 	path := msg.Who.String()
 
 	sv := s.serviceAll[path]
