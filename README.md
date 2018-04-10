@@ -28,6 +28,17 @@ go get github.com/magicsea/ganet
 
 "proto":"json",//消息参数协议打包方式,支持protobuf,json
 ```
-- 运行server/bin/server.exe
+
+- 启动
+```
+- windows 执行 StartSingleServer.bat(单进程方式) 或者 StartMultiServer.bat(多进程方式)
+- linux 执行./run.sh start
+```
+## TODO:
+- [x] 登录、聊天、个人信息修改、基本战斗
+- [ ] behavoior接入
+- [ ] 移动降低发包，客户端平滑
+- [ ] tcp,websocket协议兼容
+
 
 ## QQ群：285728047
