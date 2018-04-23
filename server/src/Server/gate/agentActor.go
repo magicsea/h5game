@@ -190,9 +190,9 @@ func (ab *AgentActor) SendClientPack(msgId interface{}, rawdata []byte) {
 		log.Error("SendClientPack marshal error:id=%v,%s", msgId, err.Error())
 		return
 	}
-	if msgId != "snap" {
-		log.Info("send:%s,id=%s,r=%s", string(data), msgId, string(rawdata))
-	}
+	// if msgId != "snap" {
+	// 	log.Info("send:%s,id=%s,r=%s", string(data), msgId, string(rawdata))
+	// }
 	ab.bindAgent.WriteMsg(data)
 }
 

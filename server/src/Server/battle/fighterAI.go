@@ -1,3 +1,4 @@
+//简化的ai
 package battle
 
 import (

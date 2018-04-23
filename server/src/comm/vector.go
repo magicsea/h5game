@@ -126,6 +126,14 @@ func (v Vector2D) Angle() float32 {
 	return float32(f)
 }
 
+//UP为0顺时针(angle=[0,2*PI)
+func (v Vector2D) AngleY() float32 {
+	f := math.Pi/2 + math.Atan2(float64(v.Y*-1), float64(v.X))
+	if f < 0 {
+		f += math.Pi * 2
+	}
+	return float32(f)
+}
 func (v Vector2D) Rotate(angle float32) Vector2D {
 	return Vector2D{
 		v.X*float32(math.Cos(float64(angle))) - v.Y*float32(math.Sin(float64(angle))),
@@ -155,14 +163,16 @@ func (v Vector2D) MapToVectors(oldMinV, oldMaxV, newMinV, newMaxV Vector2D) Vect
 }
 
 func (v Vector2D) AngleBetween(v2 Vector2D) float32 {
-	angle := v.Dot(v2) / v.Magnitude() * v2.Magnitude()
-	switch {
-	case angle <= -1:
-		return math.Pi
-	case angle >= 0:
-		return 0
-	}
-	return angle
+	//angle := v.Dot(v2) / v.Magnitude() * v2.Magnitude()
+	// switch {
+	// case angle <= -1:
+	// 	return math.Pi
+	// case angle >= 0:
+	// 	return 0
+	// }
+	a1 := math.Atan2(float64(v.Y), float64(v.X))
+	a2 := math.Atan2(float64(v2.Y), float64(v2.X))
+	return float32(a1 - a2)
 }
 
 func (v Vector2D) ClampToScalars(min, max float32) Vector2D {

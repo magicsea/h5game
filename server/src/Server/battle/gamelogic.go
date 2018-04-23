@@ -130,8 +130,13 @@ func (gl *GameLogic) update() {
 	//10秒一刷一波
 	if gl.timer%500 == 0 {
 		gl.stage++
-		gl.spawnFighters()
-		gl.send("newStage", &gameproto.NewStage{Stage: gl.stage, Fighters: gl.GetFightersInfo()})
+		//gl.spawnFighters()
+		//gl.send("newStage", &gameproto.NewStage{Stage: gl.stage, Fighters: gl.GetFightersInfo()})
+	}
+
+	//20s
+	if gl.timer%400 == 0 {
+		gl.spawnItem()
 	}
 }
 
@@ -229,7 +234,7 @@ func (gl *GameLogic) onClientMsg(cmsg ClientMsg) {
 func (gl *GameLogic) spawnFighters() {
 
 	pos, w, h := gl.mapRect.GetRect()
-	for index := 0; index < int(gl.stage)*2; index++ {
+	for index := 0; index < int(gl.stage); index++ {
 		newpos := pos.Add(c.Vector2D{rand.Float32() * w, rand.Float32() * h})
 		f := NewFighter(0, &newpos, gl, false)
 		gl.addFighter(f)
@@ -239,6 +244,15 @@ func (gl *GameLogic) spawnFighters() {
 	for _, f := range gl.fighters {
 		f.OnStart()
 	}
+}
+
+func (gl *GameLogic) spawnItem() {
+	pos, w, h := gl.mapRect.GetRect()
+	newpos := pos.Add(c.Vector2D{rand.Float32() * w, rand.Float32() * h})
+	i := NewItem(gl, &newpos, EntityType(rand.Intn(2)+1))
+	gl.addEntity(i)
+
+	//log.Info("spawnItem:", i.id)
 }
 
 func (gl *GameLogic) addEntity(e IEntity) {

@@ -1,8 +1,6 @@
 package battle
 
 import (
-	"fmt"
-
 	"gameproto/msgs"
 	"github.com/AsynkronIT/protoactor-go/actor"
 	"github.com/gogo/protobuf/proto"
@@ -86,7 +84,7 @@ func (room *Room) Receive(context actor.Context) {
 		}
 
 	case *actor.Started:
-		fmt.Println("BattleManager start,%v", msg)
+		//fmt.Println("BattleManager start,%v", msg)
 		room.selfPID = context.Self()
 		room.Prepare(context)
 

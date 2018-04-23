@@ -36,6 +36,7 @@ It has these top-level messages:
 	NewStage
 	GameOver
 	Hit
+	AddHP
 	Dead
 	AddEntity
 	RemoveEntity

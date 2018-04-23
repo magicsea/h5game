@@ -14,6 +14,15 @@ const (
 	PlayerGroup  GroupType = 0
 	MonsterGroup GroupType = 1
 )
+const (
+	HPMAX int32 = 4
+)
+
+//角色组件
+type IFighterCompnent interface {
+	Start()
+	Update(dtime float32)
+}
 
 type Fighter struct {
 	id          int32
@@ -23,12 +32,13 @@ type Fighter struct {
 	speed       float32 //弧度
 	angelSpeed  float32
 	gl          *GameLogic
-	ai          *FighterAI
+	ai          IFighterCompnent
 	group       GroupType
 
-	box  c.Shape
-	hp   int32
-	kill int32
+	box   c.Shape
+	hp    int32
+	kill  int32
+	power int32
 }
 
 const (
@@ -38,9 +48,10 @@ const (
 func NewFighter(id int32, pos *c.Vector2D, gl *GameLogic, isPlayer bool) *Fighter {
 
 	box := c.NewCircle(*pos, tankSize)
-	f := &Fighter{id: id, pos: pos, angel: 0, speed: 40, angelSpeed: 200 * math.Pi / 180, gl: gl, hp: 4, box: box}
+	f := &Fighter{id: id, pos: pos, angel: 0, speed: 40, angelSpeed: 200 * math.Pi / 180, gl: gl, hp: HPMAX, box: box}
 	if !isPlayer {
-		ai := NewFighterAI(f, gl)
+		//ai := NewFighterAI(f, gl)
+		ai := NewFighterBehavior(f, gl)
 		f.ai = ai
 		f.group = MonsterGroup
 	} else {
@@ -91,6 +102,14 @@ func (f *Fighter) GetVel() *c.Vector2D {
 	return &v
 }
 
+//偏移速度
+func (f *Fighter) GetVelOffset(fixAngle float32) *c.Vector2D {
+	vr := c.FromRadians(math.Pi/2 - f.angel + fixAngle) //换算成x方向
+	nv := vr.Normalize()
+	v := nv.Multiply(f.speed)
+	return &v
+}
+
 func (f *Fighter) GetFighterInfo() *gameproto.FighterInfo {
 	info := &gameproto.FighterInfo{Id: f.id, Pos: f.pos.ToFVector(), Vel: f.GetVel().ToFVector(), Hp: f.hp}
 	return info
@@ -99,6 +118,19 @@ func (f *Fighter) Move(angle float32) {
 	//log.Info("Move %d:%v", f.id, angle)
 	f.targetAngel = angle * math.Pi / 180
 	f.angel = f.targetAngel
+}
+
+//吃道具
+func (f *Fighter) OnFeed(t EntityType) {
+	switch t {
+	case EItemHP:
+		if f.hp < HPMAX {
+			f.hp++
+			f.gl.send("addhp", &gameproto.AddHP{Add: 1, Id: f.id})
+		}
+	case EItemPower:
+		f.power++
+	}
 }
 
 func (f *Fighter) Shot() {
@@ -110,8 +142,19 @@ func (f *Fighter) Shot() {
 	a := nvel.Multiply(bspeed)
 	bl := NewBullet(f.gl, f.pos, &a, f)
 	f.gl.addEntity(bl)
+	for i := 0; i < int(f.power) && i < 5; i++ {
+		//L
+		subvel := f.GetVelOffset(15 * math.Pi / 180 * (float32(i) + 1))
+		nsubvel := subvel.Normalize().Multiply(bspeed)
+		bl := NewBullet(f.gl, f.pos, &nsubvel, f)
+		f.gl.addEntity(bl)
+		//R
+		subvel2 := f.GetVelOffset(-15 * math.Pi / 180 * (float32(i) + 1))
+		nsubvel2 := subvel2.Normalize().Multiply(bspeed)
+		bl2 := NewBullet(f.gl, f.pos, &nsubvel2, f)
+		f.gl.addEntity(bl2)
+	}
 }
-
 func (f *Fighter) BeHit(bullet *Bullet, enemy *Fighter) {
 	f.hp--
 
@@ -135,4 +178,17 @@ func (f *Fighter) Dead(enemy *Fighter) {
 
 	f.gl.removeFighter(f.id)
 	enemy.kill++
+}
+
+func (f *Fighter) FindNearItem(frange float32, etype EntityType) IEntity {
+	//frange = 10000
+	var best IEntity
+	for _, item := range f.gl.entitys {
+		if etype == item.GetEType() && item.GetPos().WithInDistance(*f.pos, frange) {
+			if best == nil || item.GetPos().SqrDistance(*f.pos) < best.GetPos().SqrDistance(*f.pos) {
+				best = item
+			}
+		}
+	}
+	return best
 }

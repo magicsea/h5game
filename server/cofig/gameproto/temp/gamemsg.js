@@ -5408,6 +5408,216 @@
             return Hit;
         })();
     
+        gameproto.AddHP = (function() {
+    
+            /**
+             * Properties of an AddHP.
+             * @memberof gameproto
+             * @interface IAddHP
+             * @property {number|null} [add] AddHP add
+             * @property {number|null} [id] AddHP id
+             */
+    
+            /**
+             * Constructs a new AddHP.
+             * @memberof gameproto
+             * @classdesc Represents an AddHP.
+             * @implements IAddHP
+             * @constructor
+             * @param {gameproto.IAddHP=} [properties] Properties to set
+             */
+            function AddHP(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+    
+            /**
+             * AddHP add.
+             * @member {number} add
+             * @memberof gameproto.AddHP
+             * @instance
+             */
+            AddHP.prototype.add = 0;
+    
+            /**
+             * AddHP id.
+             * @member {number} id
+             * @memberof gameproto.AddHP
+             * @instance
+             */
+            AddHP.prototype.id = 0;
+    
+            /**
+             * Creates a new AddHP instance using the specified properties.
+             * @function create
+             * @memberof gameproto.AddHP
+             * @static
+             * @param {gameproto.IAddHP=} [properties] Properties to set
+             * @returns {gameproto.AddHP} AddHP instance
+             */
+            AddHP.create = function create(properties) {
+                return new AddHP(properties);
+            };
+    
+            /**
+             * Encodes the specified AddHP message. Does not implicitly {@link gameproto.AddHP.verify|verify} messages.
+             * @function encode
+             * @memberof gameproto.AddHP
+             * @static
+             * @param {gameproto.IAddHP} message AddHP message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            AddHP.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.add != null && message.hasOwnProperty("add"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).int32(message.add);
+                if (message.id != null && message.hasOwnProperty("id"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).int32(message.id);
+                return writer;
+            };
+    
+            /**
+             * Encodes the specified AddHP message, length delimited. Does not implicitly {@link gameproto.AddHP.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof gameproto.AddHP
+             * @static
+             * @param {gameproto.IAddHP} message AddHP message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            AddHP.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+    
+            /**
+             * Decodes an AddHP message from the specified reader or buffer.
+             * @function decode
+             * @memberof gameproto.AddHP
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {gameproto.AddHP} AddHP
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            AddHP.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.gameproto.AddHP();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.add = reader.int32();
+                        break;
+                    case 2:
+                        message.id = reader.int32();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+    
+            /**
+             * Decodes an AddHP message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof gameproto.AddHP
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {gameproto.AddHP} AddHP
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            AddHP.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+    
+            /**
+             * Verifies an AddHP message.
+             * @function verify
+             * @memberof gameproto.AddHP
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            AddHP.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.add != null && message.hasOwnProperty("add"))
+                    if (!$util.isInteger(message.add))
+                        return "add: integer expected";
+                if (message.id != null && message.hasOwnProperty("id"))
+                    if (!$util.isInteger(message.id))
+                        return "id: integer expected";
+                return null;
+            };
+    
+            /**
+             * Creates an AddHP message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof gameproto.AddHP
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {gameproto.AddHP} AddHP
+             */
+            AddHP.fromObject = function fromObject(object) {
+                if (object instanceof $root.gameproto.AddHP)
+                    return object;
+                var message = new $root.gameproto.AddHP();
+                if (object.add != null)
+                    message.add = object.add | 0;
+                if (object.id != null)
+                    message.id = object.id | 0;
+                return message;
+            };
+    
+            /**
+             * Creates a plain object from an AddHP message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof gameproto.AddHP
+             * @static
+             * @param {gameproto.AddHP} message AddHP
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            AddHP.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.defaults) {
+                    object.add = 0;
+                    object.id = 0;
+                }
+                if (message.add != null && message.hasOwnProperty("add"))
+                    object.add = message.add;
+                if (message.id != null && message.hasOwnProperty("id"))
+                    object.id = message.id;
+                return object;
+            };
+    
+            /**
+             * Converts this AddHP to JSON.
+             * @function toJSON
+             * @memberof gameproto.AddHP
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            AddHP.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+    
+            return AddHP;
+        })();
+    
         gameproto.Dead = (function() {
     
             /**

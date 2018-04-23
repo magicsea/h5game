@@ -8,8 +8,9 @@ import (
 type EntityType int
 
 const (
-	EBullet EntityType = 0
-	EItem   EntityType = 1
+	EBullet    EntityType = 0
+	EItemHP    EntityType = 1
+	EItemPower EntityType = 2
 )
 
 type IEntity interface {
@@ -17,19 +18,67 @@ type IEntity interface {
 	Start()
 	Update(dtime float32)
 	GetInfo() *gameproto.AddEntity
+	GetPos() *c.Vector2D
+	GetEType() EntityType
 }
 
 type EntityData struct {
-	id  int32
-	pos *c.Vector2D
-	vel *c.Vector2D
-	gl  *GameLogic
+	id    int32
+	etype EntityType
+	pos   *c.Vector2D
+	vel   *c.Vector2D
+	gl    *GameLogic
 }
 
 func (en *EntityData) GetID() int32 {
 	return en.id
 }
+func (en *EntityData) GetPos() *c.Vector2D {
+	return en.pos
+}
+func (en *EntityData) GetEType() EntityType {
+	return en.etype
+}
 
+//=================Item==================
+type Item struct {
+	EntityData
+
+	timer float32
+}
+
+func NewItem(gl *GameLogic, pos *c.Vector2D, t EntityType) *Item {
+	data := EntityData{id: gl.GenID(), pos: pos, gl: gl, etype: t}
+	bl := &Item{EntityData: data}
+	bl.Start()
+	return bl
+}
+
+func (bl *Item) Start() {
+
+}
+
+func (bl *Item) Update(dtime float32) {
+
+	//碰撞
+	for _, f := range bl.gl.fighters {
+		if f.box != nil && f.box.PointInRange(*bl.pos) {
+			f.OnFeed(bl.etype)
+			bl.destory()
+			return
+		}
+	}
+}
+
+func (bl *Item) destory() {
+	bl.gl.removeEntity(bl)
+}
+
+func (bl *Item) GetInfo() *gameproto.AddEntity {
+	return &gameproto.AddEntity{Id: bl.id, Pos: bl.pos.ToFVector(), Etype: int32(bl.etype)}
+}
+
+//=================Bullet==================
 type Bullet struct {
 	EntityData
 	timer  float32

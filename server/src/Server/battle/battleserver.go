@@ -41,7 +41,7 @@ func (s *BattleService) OnReceive(context service.Context) {
 }
 
 func (s *BattleService) OnInit() {
-
+	InitBev()
 }
 
 func (s *BattleService) OnStart(as *service.ActorService) {
