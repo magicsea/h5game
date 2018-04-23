@@ -136,7 +136,11 @@ export default class Tank extends cc.Component {
         console.info("BeHit :",this.id)
         this.dumpUI()
     }
-
+    AddHP(add:number) {
+        this.hp+=add
+        console.info("AddHP :",this.id)
+        this.dumpUI()
+    }
     dumpUI() {
         for (let i = 0; i < this.HPs.length; i++) {
             const element = this.HPs[i];

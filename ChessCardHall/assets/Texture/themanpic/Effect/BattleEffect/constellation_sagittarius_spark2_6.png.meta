@@ -1,0 +1,30 @@
+{
+  "ver": "1.0.0",
+  "uuid": "bb37b3c4-070b-4552-8997-e27692385528",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "constellation_sagittarius_spark2_6": {
+      "ver": "1.0.3",
+      "uuid": "ea2cdf95-b3d7-4466-87a2-9943115936f5",
+      "rawTextureUuid": "bb37b3c4-070b-4552-8997-e27692385528",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 81,
+      "height": 103,
+      "rawWidth": 81,
+      "rawHeight": 103,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

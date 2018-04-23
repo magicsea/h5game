@@ -1,0 +1,30 @@
+{
+  "ver": "1.0.0",
+  "uuid": "cb29298d-131d-458e-918e-cfe29323bce5",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "constellation_tautus_spark1_4": {
+      "ver": "1.0.3",
+      "uuid": "dcd08ab3-b42b-4574-a2a5-5773b71798f4",
+      "rawTextureUuid": "cb29298d-131d-458e-918e-cfe29323bce5",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 72,
+      "height": 73,
+      "rawWidth": 72,
+      "rawHeight": 73,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

@@ -2369,6 +2369,102 @@ export namespace gameproto {
         public toJSON(): { [k: string]: any };
     }
 
+    /** Properties of an AddHP. */
+    interface IAddHP {
+
+        /** AddHP add */
+        add?: (number|null);
+
+        /** AddHP id */
+        id?: (number|null);
+    }
+
+    /** Represents an AddHP. */
+    class AddHP implements IAddHP {
+
+        /**
+         * Constructs a new AddHP.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: gameproto.IAddHP);
+
+        /** AddHP add. */
+        public add: number;
+
+        /** AddHP id. */
+        public id: number;
+
+        /**
+         * Creates a new AddHP instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns AddHP instance
+         */
+        public static create(properties?: gameproto.IAddHP): gameproto.AddHP;
+
+        /**
+         * Encodes the specified AddHP message. Does not implicitly {@link gameproto.AddHP.verify|verify} messages.
+         * @param message AddHP message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: gameproto.IAddHP, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified AddHP message, length delimited. Does not implicitly {@link gameproto.AddHP.verify|verify} messages.
+         * @param message AddHP message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: gameproto.IAddHP, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes an AddHP message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns AddHP
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): gameproto.AddHP;
+
+        /**
+         * Decodes an AddHP message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns AddHP
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): gameproto.AddHP;
+
+        /**
+         * Verifies an AddHP message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates an AddHP message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns AddHP
+         */
+        public static fromObject(object: { [k: string]: any }): gameproto.AddHP;
+
+        /**
+         * Creates a plain object from an AddHP message. Also converts values to other types if specified.
+         * @param message AddHP
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: gameproto.AddHP, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this AddHP to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
     /** Properties of a Dead. */
     interface IDead {
 

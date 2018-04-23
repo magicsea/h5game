@@ -21,9 +21,13 @@ export default class Controller extends cc.Component {
 
     moveVec : cc.Vec2;//方向控制
     angel:number;
+
+    @property(cc.Node)
+    btnShot: cc.Node = null;//射击按钮
     
 
-
+    @property(cc.Node)
+    joystickNode: cc.Node = null;//joysticknode
     // LIFE-CYCLE CALLBACKS:
 
     onLoad () {
@@ -33,15 +37,27 @@ export default class Controller extends cc.Component {
     start () {
         // 初始化键盘输入监听
         this.setInputControl();
-        
+        vv.btnClick(this.btnShot, () => {
+            this.shoot()
+        });
     }
 
     update (dt) {
-        var msg = {angle:this.angel}//new gameproto.Move()
+        
+        var js = this.joystickNode.getComponent("GameJoystick")
+        var pos = js.getTouchPos() as cc.Vec2
+        var a = cc.pAngleSigned(pos,cc.Vec2.UP)*180/3.14
+        if (pos.equals(cc.Vec2.ZERO)) {
+            a = this.angel
+        }
+        
+        //console.warn("angle:",a)
+        var msg = {angle:a}//new gameproto.Move()
         vv.socket.emit("b_move",msg)
         // if(this.player) {
         //     this.player.setMoveVec(this.moveVec)
         // }
+
     }
 
     shoot() {

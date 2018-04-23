@@ -24,10 +24,10 @@
   "startScene": "22ba6ac9-5d3e-4cae-b3f7-d03ff4163cf2",
   "title": "tankbattle",
   "webOrientation": "auto",
-  "xxteaKey": "385774bf-4147-4d",
-  "zipCompressJs": true,
   "wechatgame": {
     "appid": "wx6ac3f5090a6b99c5",
     "orientation": "portrait"
-  }
+  },
+  "xxteaKey": "385774bf-4147-4d",
+  "zipCompressJs": true
 }

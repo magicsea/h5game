@@ -1,0 +1,30 @@
+{
+  "ver": "1.0.0",
+  "uuid": "e252a0c6-21bd-444c-9007-1b4bdd186189",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "LEGO_txfj_spark2_3": {
+      "ver": "1.0.3",
+      "uuid": "9de3f7ab-7ae6-43b8-a3c6-f2c3d589c6f5",
+      "rawTextureUuid": "e252a0c6-21bd-444c-9007-1b4bdd186189",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 59,
+      "height": 81,
+      "rawWidth": 59,
+      "rawHeight": 81,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

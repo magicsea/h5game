@@ -12,7 +12,7 @@ import { gameproto } from "../../Libs/gameproto/gamemsg";
 import Tank from "./Tank";
 import Bullet from "./Bullet";
 import GameOverUI from "./GameOverUI";
-
+import Item from "./Item";
 const {ccclass, property} = cc._decorator;
 
 @ccclass
@@ -34,7 +34,7 @@ export default class TankGame extends cc.Component {
     snaps : gameproto.Snap[] = []
 
     //地图对象
-    entityMap:{[index:number]:Bullet;}={}
+    entityMap:{[index:number]:cc.Node;}={}
 
     selfId: number//自己的id
     // LIFE-CYCLE CALLBACKS:
@@ -54,6 +54,7 @@ export default class TankGame extends cc.Component {
         vv.wson("addEntity",(msg)=>{this.onAddEntity(msg)})
         vv.wson("removeEntity",(msg)=>{this.onRemoveEntity(msg)})
         vv.wson("hit",(msg)=>{this.onHit(msg)})
+        vv.wson("addhp",(msg)=>{this.onAddHP(msg)})
         vv.wson("dead",(msg)=>{this.onDead(msg)})
         vv.wson("gameover",(msg)=>{this.onGameOver(msg)})
     
@@ -173,35 +174,64 @@ export default class TankGame extends cc.Component {
 
     //gameproto.Snap
     onAddEntity(msg:gameproto.AddEntity) {
-        cc.loader.loadRes("Prefab/bullet_2" , (err, prefab) => {
-            if (err) {
-                console.error("onAddEntity fail:",err)
-                return;
-            }
-
-            let bulletnode = cc.instantiate(prefab)
-            let bullet = bulletnode.addComponent(Bullet)
-            let bulletSpeed = 300
-            bulletnode.parent = TankGame.GetRoot()
-            bulletnode.position = msg.pos
+        if(msg.etype==undefined||msg.etype==0) {
+            cc.loader.loadRes("Prefab/bullet_2" , (err, prefab) => {
+                if (err) {
+                    console.error("onAddEntity fail:",err)
+                    return;
+                }
     
-            let vel = new cc.Vec2(msg.vel.x,msg.vel.y)
-            bullet.SetMoveVec(vel)
-            this.entityMap[msg.id]=bullet
-        });
+                let bulletnode = cc.instantiate(prefab) as cc.Node
+                let bullet = bulletnode.addComponent(Bullet)
+                let bulletSpeed = 300
+                bulletnode.parent = TankGame.GetRoot()
+                bulletnode.position = new cc.Vec2(msg.pos.x,msg.pos.y) 
+        
+                let vel = new cc.Vec2(msg.vel.x,msg.vel.y)
+                bullet.SetMoveVec(vel)
+                this.entityMap[msg.id]=bulletnode
+            });
+        } else {
+            cc.loader.loadRes("Prefab/item" , (err, prefab) => {
+                if (err) {
+                    console.error("onAddEntity fail:",err)
+                    return;
+                }
+    
+                console.warn("add item:",msg.etype)
+                let newnode = cc.instantiate(prefab) as cc.Node
+                let item = newnode.addComponent(Item)
+                item.SetType(msg.etype)
+
+        
+                newnode.parent = TankGame.GetRoot()
+                newnode.position = new cc.Vec2(msg.pos.x,msg.pos.y) 
+
+                this.entityMap[msg.id]=newnode
+            });
+        }
+
     }
    
     onRemoveEntity(msg:gameproto.RemoveEntity) {
         let bl = this.entityMap[msg.id]
         if (bl!=undefined&&bl!=null) {
-            bl.node.destroy()
+            bl.destroy()
         }
+        delete this.entityMap[msg.id]
     }
 
     onHit(msg:gameproto.Hit) {
         let tank = this.getTank(msg.targetId)
         if (tank!=undefined&&tank!=null) {
             tank.BeHit(msg.loseHP)
+        }
+    }
+
+    onAddHP(msg:gameproto.AddHP) {
+        let tank = this.getTank(msg.id)
+        if (tank!=undefined&&tank!=null) {
+            tank.AddHP(msg.add)
         }
     }
 
@@ -218,10 +248,14 @@ export default class TankGame extends cc.Component {
 
     onGameOver(msg:gameproto.GameOver) {
         console.info("GameOver:",msg.time,msg.stage,msg.kill)
+        let kill = 0
+        if (msg.kill!=undefined) {
+            kill = msg.kill
+        }
         vv.showTip(`游戏结束，你坚持了[${msg.time}]秒`)
 
         this.fightNode.active = false
-        this.gameoverUI.DumpUI(msg.time,msg.kill)
+        this.gameoverUI.DumpUI(msg.time,kill)
         this.gameoverUI.node.active = true
     }
 }
