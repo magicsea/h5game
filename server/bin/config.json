@@ -57,7 +57,8 @@
 							"MaxConnNum":1000,
 							"WsAddr":":7201",
 							"WsAddrOut":"127.0.0.1:7201",
-							"TcpAddr":":7200"
+							"TcpAddr":":7200",
+							"TcpAddrOut":"127.0.0.1:7200"
 					}
 			},
 			"game1":{

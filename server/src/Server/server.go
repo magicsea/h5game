@@ -13,8 +13,8 @@ import (
 	"Server/session"
 	"flag"
 	"github.com/magicsea/ganet/app"
-	"log"
 	//gp "github.com/magicsea/ganet/proto"
+	"log"
 )
 
 var (
@@ -38,7 +38,7 @@ func main() {
 												
 	`
 	log.Println(logo + "ver." + conf.Ver)
-	//gp.SetProtoType("pb")
+	//gp.SetProtoType("pb")//消息体使用protobuf，默认json
 	app.RegisterService(center.Type(), center.Service)
 	app.RegisterService(session.Type(), session.Service)
 	app.RegisterService(login.Type(), login.Service)

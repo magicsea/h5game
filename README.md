@@ -37,8 +37,7 @@ go get github.com/magicsea/ganet
 ## TODO:
 - [x] 登录、聊天、个人信息修改、基本战斗
 - [x] behavoior接入
+- [x] tcp,websocket协议兼容。pb,json可选。
 - [ ] 移动降低发包，客户端平滑
-- [ ] tcp,websocket协议兼容
-
 
 ## QQ群：285728047

@@ -15,14 +15,14 @@ type JsData struct {
 	Msg string `json:Msg`
 }
 
-func newAgent(conn *network.WSConn) network.Agent {
+func newAgent(conn network.Conn) network.Agent {
 	Client := new(Agent)
 	Client.conn = conn
 	return Client
 }
 
 type Agent struct {
-	conn      *network.WSConn
+	conn      network.Conn
 	msgHandle func(channel byte, msgId interface{}, data []byte)
 }
 

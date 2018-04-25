@@ -5,13 +5,13 @@ import (
 	"gameproto"
 	_ "gameproto/msgs"
 	"github.com/magicsea/ganet/network"
+	gp "github.com/magicsea/ganet/proto"
 	"io/ioutil"
 	"log"
 	"net/http"
 	"sync"
 	//"time"
 
-	"encoding/json"
 	"github.com/gogo/protobuf/proto"
 )
 
@@ -23,7 +23,7 @@ type Robot struct {
 	uid      uint64
 	key      string
 
-	client *network.WSClient
+	client network.INetClient
 	agent  *Agent
 	wg     sync.WaitGroup
 }
@@ -43,9 +43,9 @@ func (robot *Robot) Start() {
 }
 
 func (robot *Robot) Login() bool {
-	fmt.Println("login...")
+	var addr = *host
+	fmt.Println("login...", addr)
 
-	var addr = "http://127.0.0.1:9900"
 	//var addr = "http://47.52.241.13:9900"
 	response, err := http.Get(fmt.Sprintf("%s/login?a=%s&p=1111", addr, robot.account))
 	if err != nil {
@@ -56,7 +56,7 @@ func (robot *Robot) Login() bool {
 	body, _ := ioutil.ReadAll(response.Body)
 	result := gameproto.UserLoginResult{}
 
-	umErr := json.Unmarshal(body, &result)
+	umErr := gp.Unmarshal(body, &result)
 	if umErr != nil {
 		fmt.Println("err:", umErr, "  result:", result)
 		return false
@@ -64,11 +64,15 @@ func (robot *Robot) Login() bool {
 	fmt.Println("login ok,", result.GateWsAddr)
 	robot.uid = uint64(result.Uid)
 	robot.key = result.Key
-	robot.gateAddr = "ws://" + result.GateWsAddr
+	if *nettype == "ws" {
+		robot.gateAddr = "ws://" + result.GateWsAddr
+	} else {
+		robot.gateAddr = result.GateTcpAddr
+	}
 	return result.GetResult() == int32(gameproto.OK)
 }
 
-func (robot *Robot) newAgent(conn *network.WSConn) network.Agent {
+func (robot *Robot) newAgent(conn network.Conn) network.Agent {
 	robot.agent = new(Agent)
 	robot.agent.conn = conn
 	robot.agent.msgHandle = robot.OnMsgRecv
@@ -78,9 +82,15 @@ func (robot *Robot) newAgent(conn *network.WSConn) network.Agent {
 
 func (robot *Robot) ConnectGate() {
 	fmt.Println("ConnectGate:", robot.gateAddr)
-	robot.client = new(network.WSClient)
-	robot.client.Addr = robot.gateAddr
-	robot.client.NewAgent = robot.newAgent
+	if *nettype == "ws" {
+		robot.client = new(network.WSClient)
+	} else {
+		c := new(network.TCPClient)
+		c.LittleEndian = true
+		robot.client = c
+	}
+	robot.client.Set(robot.gateAddr, robot.newAgent)
+
 	//robot.client.LittleEndian = true
 	robot.client.Start()
 
@@ -107,7 +117,7 @@ func (robot *Robot) OnMsgRecv(channel byte, msgId interface{}, data []byte) {
 		robot.EnterGame()
 	case "chat":
 		var msg = new(gameproto.S2C_WorldChatMsg)
-		json.Unmarshal(data, msg)
+		gp.Unmarshal(data, msg)
 		fmt.Println("recv chat:", msg.Name, msg.Data)
 	}
 	// tmsgId := gameproto.GS2C_CMD(msgId)
@@ -171,7 +181,7 @@ func (robot *Robot) OnMsgRecv(channel byte, msgId interface{}, data []byte) {
 }
 
 func (robot *Robot) SendMsg(msgId interface{}, pb proto.Message) {
-	data, err := json.Marshal(pb)
+	data, err := gp.Marshal(pb)
 	if err != nil {
 		fmt.Println("###EncodeMsg error:", err)
 		return

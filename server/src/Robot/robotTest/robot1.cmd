@@ -1,1 +1,0 @@
-start robotTest.exe -u=magicsea_2
