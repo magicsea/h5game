@@ -13,6 +13,7 @@ import (
 	"github.com/AsynkronIT/protoactor-go/actor"
 	"github.com/gogo/protobuf/proto"
 	"github.com/magicsea/ganet/config"
+	gp "github.com/magicsea/ganet/proto"
 	"github.com/magicsea/ganet/service"
 )
 
@@ -125,18 +126,49 @@ func (ab *AgentActor) ReceviceClientMsg(data []byte) error {
 //验证消息
 func (ab *AgentActor) CheckLogin(msgId interface{}, rawdata []byte) error {
 	log.Info("checklogin:%s", string(rawdata))
-	pack := ab.GetNetPack()
 	msg := gameproto.PlatformUser{}
-	err := pack.UnmarshalObj(rawdata, &msg)
+	err := gp.Unmarshal(rawdata, &msg)
 	if err != nil {
 		log.Error("CheckLogin fail:%v,msgid:%v", err, msgId)
 		return err
 	}
 	pretime := time.Now()
+
+	// smsg := &msgs.ServerCheckLogin{Uid: uint64(msg.PlatformUid), Key: msg.Key, AgentPID: ab.pid}
+	// result, err := cluster.GetServicePID("session").Ask(smsg)
+	// if err == nil {
+	// 	checkResult := result.(*msgs.CheckLoginResult)
+	// 	if checkResult.Result == msgs.OK {
+	// 		//登录成功
+	// 		usetime := time.Now().Sub(pretime)
+	// 		log.Info("CheckLogin success:%v,time:%v", checkResult, usetime.Seconds())
+	// 		ab.baseInfo = checkResult.BaseInfo
+	// 		for _, s := range checkResult.BindServers {
+	// 			if s.Pid != nil {
+	// 				ab.bindServers[int(s.Channel)] = s.Pid
+	// 			}
+	// 		}
+	// 		ab.verified = true
+	// 		ab.parentPid.Tell(&msgs.AddAgentToParent{Uid: checkResult.BaseInfo.Uid, Sender: ab.pid})
+	// 	} else {
+	// 		log.Info("###CheckLogin fail:", checkResult)
+	// 	}
+
+	// 	ret := &gameproto.LoginReturn{ErrCode: int32(checkResult.Result), ServerTime: int32(time.Now().Unix())}
+	// 	ab.SendClient(msgId, ret)
+
+	// } else {
+	// 	log.Error("CheckLogin error :" + err.Error())
+	// }
+	spid, code := GetBestGameserver()
+	if code != msgs.OK {
+		log.Error("GetBestGameserver error:%v", code)
+		return errors.New("GetBestGameserver error")
+	}
 	smsg := &msgs.ServerCheckLogin{Uid: uint64(msg.PlatformUid), Key: msg.Key, AgentPID: ab.pid}
-	//frame := &msgs.FrameMsg{msgs.ChannelType(channel), uint32(msgid), data[2:]}
-	result, err := cluster.GetServicePID("session").Ask(smsg)
+	result, err := spid.RequestFuture(smsg, time.Second*3).Result()
 	if err == nil {
+		//登录成功
 		checkResult := result.(*msgs.CheckLoginResult)
 		if checkResult.Result == msgs.OK {
 			//登录成功
@@ -150,24 +182,34 @@ func (ab *AgentActor) CheckLogin(msgId interface{}, rawdata []byte) error {
 			}
 			ab.verified = true
 			ab.parentPid.Tell(&msgs.AddAgentToParent{Uid: checkResult.BaseInfo.Uid, Sender: ab.pid})
+
+			ret := &gameproto.LoginReturn{ErrCode: int32(checkResult.Result), ServerTime: int32(time.Now().Unix())}
+			ab.SendClient(msgId, ret)
+
 		} else {
 			log.Info("###CheckLogin fail:", checkResult)
 		}
-
-		ret := &gameproto.LoginReturn{ErrCode: int32(checkResult.Result), ServerTime: int32(time.Now().Unix())}
-		ab.SendClient(msgId, ret)
-
 	} else {
 		log.Error("CheckLogin error :" + err.Error())
 	}
-
 	return nil
 }
 
+//均衡负载选择服务器
+func GetBestGameserver() (*actor.PID, msgs.GAErrorCode) {
+	//请求gameserver
+	result, err := cluster.GetServicePID("center").Ask(&msgs.ApplyService{"game"})
+	if err != nil {
+		log.Error("get gameserver error:%v", err)
+		return nil, msgs.Error
+	}
+	sr := result.(*msgs.ApplyServiceResult)
+	return sr.Pid, msgs.OK
+}
+
 //发送消息到客户端
-func (ab *AgentActor) SendClient(msgId interface{}, msg interface{}) {
-	pack := ab.GetNetPack()
-	mdata, err := pack.MarshalObj(msg)
+func (ab *AgentActor) SendClient(msgId interface{}, msg proto.Message) {
+	mdata, err := gp.Marshal(msg)
 	if err != nil {
 		log.Error("SendClient marshal error:%v", err)
 		return

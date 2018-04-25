@@ -16,7 +16,7 @@ import (
 
 	"time"
 
-	"github.com/magicsea/ganet/network"
+	"github.com/magicsea/ganet/proto"
 	//"Server/config"
 )
 
@@ -177,20 +177,59 @@ func login(w http.ResponseWriter, req *http.Request) {
 	//保存
 	db.SetRedisObjectField(user, r, gamedb, "LastLoginTime", now)
 	id, _ := strconv.Atoi(r)
-	resp, err := cluster.GetServicePID("session").Ask(&msgs.UserLogin{acc, uint64(id)})
+
+	//保存token
+
+	resp, err := OnUserLogin(uint64(id))
 	if err == nil {
-		var s, _ = network.Marshal(resp.(*gameproto.UserLoginResult))
+		var s, _ = proto.Marshal(resp)
 		w.Write(s)
-		log.Info("login ok:msg=%v", resp)
+		log.Info("login ok:msg=%+v", resp)
 	} else {
-		loginBackError(w, "ask session error", err)
+		loginBackError(w, "login error", err)
 		log.Info("login error:", acc, err)
 	}
+}
+
+//玩家登陆
+func OnUserLogin(id uint64) (*gameproto.UserLoginResult, error) {
+	//请求gate
+	result, err := cluster.GetServicePID("center").Ask(&msgs.ApplyService{"gate"})
+	if err != nil {
+		return nil, err
+	}
+
+	sr := result.(*msgs.ApplyServiceResult)
+	if sr.Result != msgs.OK {
+		return &gameproto.UserLoginResult{Result: int32(sr.Result)}, nil
+	}
+
+	//加入数据
+	key := "1111"
+	//uInfo := &msgs.UserBaseInfo{msg.Account, "玩家" + strconv.Itoa(int(msg.Uid)), msg.Uid}
+	//ss := &PlayerSession{userInfo: uInfo, gatePid: sr.Pid, key: "1111"}
+	//s.sessionMgr.AddSession(ss)
+	//s.unlogiinDataMgr.Push(msg.Uid, key, nil)
+	tokenkey := fmt.Sprintf("UserToken:%v_%v", id, key)
+	db.GetRedisGame().Set(tokenkey, key, time.Second*30)
+
+	gateAddr := GetServiceValue("TcpAddr", sr.Values)
+	gateWsAddr := GetServiceValue("WsAddr", sr.Values)
+	return &gameproto.UserLoginResult{Uid: uint32(id), GateTcpAddr: gateAddr, GateWsAddr: gateWsAddr, Key: key, Result: int32(msgs.OK)}, nil
+}
+
+func GetServiceValue(key string, values []*msgs.ServiceValue) string {
+	for _, v := range values {
+		if v.Key == key {
+			return v.Value
+		}
+	}
+	return ""
 }
 
 func loginBackError(w http.ResponseWriter, info string, e error) {
 	log.Error("login user db fail:%v,%v", info, e)
 	var m = &gameproto.UserLoginResult{Result: int32(msgs.Error)}
-	d, _ := network.Marshal(m)
+	d, _ := proto.Marshal(m)
 	w.Write(d)
 }

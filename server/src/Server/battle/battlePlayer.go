@@ -7,7 +7,7 @@ import (
 	"github.com/gogo/protobuf/proto"
 	"github.com/magicsea/ganet/config"
 	"github.com/magicsea/ganet/log"
-	"github.com/magicsea/ganet/network"
+	gp "github.com/magicsea/ganet/proto"
 )
 
 type Player struct {
@@ -54,7 +54,7 @@ func (p *Player) SendRaw(msgId interface{}, rawdata []byte) {
 }
 
 func (p *Player) SendMsg(msgId interface{}, msg proto.Message) {
-	data, err := network.Marshal(msg)
+	data, err := gp.Marshal(msg)
 	if err != nil {
 		log.Error("SendMsg.Marshal error:%v", err)
 		return

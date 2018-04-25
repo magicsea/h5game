@@ -5,7 +5,7 @@ import (
 	"github.com/AsynkronIT/protoactor-go/actor"
 	"github.com/gogo/protobuf/proto"
 	"github.com/magicsea/ganet/log"
-	"github.com/magicsea/ganet/network"
+	gp "github.com/magicsea/ganet/proto"
 	"github.com/magicsea/ganet/service"
 	"github.com/magicsea/ganet/util"
 	"time"
@@ -189,7 +189,7 @@ func (room *Room) CheckLeave() {
 }
 
 func (room *Room) SendMsg(msgId interface{}, msg proto.Message) {
-	data, err := network.Marshal(msg)
+	data, err := gp.Marshal(msg)
 	if err != nil {
 		log.Error("SendMsg.Marshal error:%v", err)
 		return

@@ -14,9 +14,7 @@ import (
 	"flag"
 	"github.com/magicsea/ganet/app"
 	"log"
-	//"github.com/magicsea/ganet/login"
-	//logr "github.com/Sirupsen/logrus"
-	//logr "github.com/magicsea/ganet/log"
+	//gp "github.com/magicsea/ganet/proto"
 )
 
 var (
@@ -40,6 +38,7 @@ func main() {
 												
 	`
 	log.Println(logo + "ver." + conf.Ver)
+	//gp.SetProtoType("pb")
 	app.RegisterService(center.Type(), center.Service)
 	app.RegisterService(session.Type(), session.Service)
 	app.RegisterService(login.Type(), login.Service)

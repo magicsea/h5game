@@ -5,7 +5,7 @@ import (
 	"github.com/AsynkronIT/protoactor-go/actor"
 	"github.com/gogo/protobuf/proto"
 	"github.com/magicsea/ganet/log"
-	"github.com/magicsea/ganet/network"
+	gp "github.com/magicsea/ganet/proto"
 )
 
 func init() {
@@ -34,7 +34,7 @@ func (c *PlayerMsgContext) GetPlayerID() uint64 {
 }
 
 func (c *PlayerMsgContext) UnmarshalMsg(m proto.Message) error {
-	return network.Unmarshal(c.rawMsg, m)
+	return gp.Unmarshal(c.rawMsg, m)
 }
 func (c *PlayerMsgContext) GetPlayerName() string {
 	name := c.player.ReadName()

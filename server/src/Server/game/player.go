@@ -17,7 +17,7 @@ import (
 	"github.com/AsynkronIT/protoactor-go/actor"
 	"github.com/gogo/protobuf/proto"
 	"github.com/magicsea/ganet/config"
-	"github.com/magicsea/ganet/network"
+	gp "github.com/magicsea/ganet/proto"
 )
 
 type Player struct {
@@ -32,39 +32,36 @@ type Player struct {
 	timer *time.Ticker
 	//isDataDirty bool
 
-	_transData *msgs.CreatePlayer
+	//_transData *msgs.CreatePlayer
 }
 
 func NewPlayer(uid uint64, agentpid *actor.PID, trans *msgs.CreatePlayer, context service.Context) (*Player, error) {
 	p := &Player{UID: uid, agentPID: agentpid}
 	//p.msgHandler = make(map[uint32]MessageReqFunc)
 	//p.rounter = make(map[msgs.ChannelType]IPlayerModule)
-	p._transData = trans
 	p.parentPID = context.Self()
 	props := actor.FromInstance(p)
 	pid := context.Spawn(props)
+	pid.Tell(trans)
 	//pid, err := actor.SpawnWithParent(props, parent)
 	//if err != nil {
 	//	return nil, err
 	//}
-	p.selfPID = pid
+	//p.selfPID = pid
 
-	log.Info("NewPlayer:%v, agent=%v", p.GetID(), p.agentPID)
+	log.Info("NewPlayer:%v, pid=%v", p.GetID(), pid)
 	return p, nil
 }
 
 func (p *Player) Receive(context actor.Context) {
 	switch msg := context.Message().(type) {
 	case *actor.Started:
-		fmt.Println("Started, initialize actor here", msg)
+		log.Info("player Started, initialize actor here")
+	case *msgs.CreatePlayer:
+		log.Info("player CreatePlayer:%v", p.UID)
+		p.selfPID = context.Self()
 		result := p.Start()
-		roomPID := p.recoverBattle()
-		p.parentPID.Tell(
-			&PlayerInitEnd{Result: result, BaseInfo: &msgs.UserBaseInfo{Uid: p.UID},
-				Sender:    context.Self(),
-				RoomPID:   roomPID,
-				TransData: p._transData})
-		p._transData = nil
+		p.OnLoginOK(context, msg, result)
 	case *actor.Stopping:
 		fmt.Println("Stopping, actor is about shut down", msg)
 		p.OnDestory()
@@ -141,6 +138,42 @@ func (p *Player) Start() msgs.GAErrorCode {
 			Diamond:  player.Rmb,
 		})
 	return msgs.OK
+
+}
+
+func (p *Player) OnLoginOK(context actor.Context, tmsg *msgs.CreatePlayer, errCode msgs.GAErrorCode) {
+
+	roomPID := p.recoverBattle()
+
+	id := p.UID
+	sender := tmsg.Sender
+	if errCode != msgs.OK {
+		log.Error("OnLoginOK,create player fail,id=%v,%v", id, errCode)
+		context.Tell(sender, &msgs.CheckLoginResult{Result: msgs.Error})
+		return
+	}
+
+	inf := &msgs.UserBaseInfo{Uid: id}
+	result := &msgs.CreatePlayerResult{
+		Result:    msgs.OK,
+		BaseInfo:  inf,
+		PlayerPID: context.Self(),
+		RoomPID:   roomPID,
+		TransData: tmsg}
+
+	//send sesson
+	ss := cluster.GetServicePID("session")
+	context.Tell(ss.GetActorPID(), result)
+
+	//send client
+	gsValue := msgs.UserBindServer{msgs.GameServer, p.selfPID}
+	bsValue := msgs.UserBindServer{msgs.BattleServer, roomPID}
+	context.Tell(sender, &msgs.CheckLoginResult{
+		Result:      msgs.OK,
+		BaseInfo:    inf,
+		BindServers: []*msgs.UserBindServer{&gsValue, &bsValue}})
+
+	log.Info("player.OnLoginOK  ok:%v", p.UID)
 
 }
 
@@ -275,7 +308,7 @@ func (p *Player) OnDestory() {
 
 //game协议发送到客户端
 func (p *Player) SendGameMsg(msgId interface{}, msg proto.Message) {
-	data, err := network.Marshal(msg)
+	data, err := gp.Marshal(msg)
 	if err != nil {
 		log.Error("SendGameMsg.Marshal error:%v", err)
 	}
@@ -291,7 +324,7 @@ func (p *Player) SendGameMsg(msgId interface{}, msg proto.Message) {
 
 //发送到其他玩家
 func SendPlayerClientMsg(gatePID *actor.PID, msgId interface{}, msg proto.Message) {
-	data, err := network.Marshal(msg)
+	data, err := gp.Marshal(msg)
 	if err != nil {
 		log.Error("SendPlayerClientMsg.Marshal error:%v", err)
 	}
@@ -307,7 +340,7 @@ func SendPlayerClientMsg(gatePID *actor.PID, msgId interface{}, msg proto.Messag
 
 //发送到其他玩家
 func SendWorldMsg(msgId interface{}, msg proto.Message) {
-	data, err := network.Marshal(msg)
+	data, err := gp.Marshal(msg)
 	if err != nil {
 		log.Error("SendPlayerClientMsg.Marshal error:%v", err)
 	}

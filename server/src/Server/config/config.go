@@ -1,8 +1,8 @@
 package config
 
 import (
-	"github.com/magicsea/ganet/config"
 	"encoding/json"
+	"github.com/magicsea/ganet/config"
 	"io/ioutil"
 	"log"
 	"strconv"
@@ -15,7 +15,6 @@ type Config struct {
 	DesignConfig   map[string]string    `json:"design"`
 	Ver            string               `json:"ver"`
 	GameConfigPath string               `json:"gameconfig"`
-
 }
 
 type RedisConf struct {

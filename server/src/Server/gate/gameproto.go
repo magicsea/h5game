@@ -5,8 +5,8 @@ import (
 	"errors"
 	"fmt"
 	"github.com/gogo/protobuf/proto"
-	"github.com/magicsea/ganet/config"
-	"github.com/magicsea/ganet/gateframework"
+	//"github.com/magicsea/ganet/config"
+	//"github.com/magicsea/ganet/gateframework"
 	"github.com/magicsea/ganet/log"
 	"reflect"
 	"strings"
@@ -182,18 +182,19 @@ func (p *NetPackJson) GetChannelType(msgID interface{}) ChannelType {
 var netPackBytes NetPackBytes
 var netPackJson NetPackJson
 
-func GetNetPack(t gateframework.NetType) NetPack {
-	if t == gateframework.TCP {
-		return &netPackBytes
-	} else {
-		return &netPackJson
-	}
-}
+// func GetNetPack(t gateframework.NetType) NetPack {
+// 	if t == gateframework.TCP {
+// 		return &netPackBytes
+// 	} else {
+// 		return &netPackJson
+// 	}
+// }
 
 func GetNetPackByConf() NetPack {
-	if config.IsJsonProto() {
-		return &netPackJson
-		return &netPackBytes
-	}
-	return &netPackBytes
+	return &netPackJson
+	// if config.IsJsonProto() {
+	// 	return &netPackJson
+
+	// }
+	// return &netPackBytes
 }
