@@ -52,7 +52,7 @@ func (s *GateService) OnReceive(context service.Context) {
 		delete(s.agents, msg.Uid)
 	case *NewAagentActorMsg:
 		ab := NewAgentActor(context, msg.Agent)
-		pid := context.Spawn(actor.FromInstance(ab))
+		pid := context.Spawn(actor.PropsFromProducer(func() actor.Actor {return ab}))
 		ab.pid = pid
 		ab.parentPid = context.Self()
 		context.Respond(&NewAagentActorResultMsg{Pid: pid})

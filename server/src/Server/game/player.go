@@ -40,7 +40,7 @@ func NewPlayer(uid uint64, agentpid *actor.PID, trans *msgs.CreatePlayer, contex
 	//p.msgHandler = make(map[uint32]MessageReqFunc)
 	//p.rounter = make(map[msgs.ChannelType]IPlayerModule)
 	p.parentPID = context.Self()
-	props := actor.FromInstance(p)
+	props := actor.PropsFromProducer(func() actor.Actor {return p})
 	pid := context.Spawn(props)
 	pid.Tell(trans)
 	//pid, err := actor.SpawnWithParent(props, parent)
@@ -149,7 +149,7 @@ func (p *Player) OnLoginOK(context actor.Context, tmsg *msgs.CreatePlayer, errCo
 	sender := tmsg.Sender
 	if errCode != msgs.OK {
 		log.Error("OnLoginOK,create player fail,id=%v,%v", id, errCode)
-		context.Tell(sender, &msgs.CheckLoginResult{Result: msgs.Error})
+		context.Send(sender, &msgs.CheckLoginResult{Result: msgs.Error})
 		return
 	}
 
@@ -163,12 +163,12 @@ func (p *Player) OnLoginOK(context actor.Context, tmsg *msgs.CreatePlayer, errCo
 
 	//send sesson
 	ss := cluster.GetServicePID("session")
-	context.Tell(ss.GetActorPID(), result)
+	context.Send(ss.GetActorPID(), result)
 
 	//send client
 	gsValue := msgs.UserBindServer{msgs.GameServer, p.selfPID}
 	bsValue := msgs.UserBindServer{msgs.BattleServer, roomPID}
-	context.Tell(sender, &msgs.CheckLoginResult{
+	context.Send(sender, &msgs.CheckLoginResult{
 		Result:      msgs.OK,
 		BaseInfo:    inf,
 		BindServers: []*msgs.UserBindServer{&gsValue, &bsValue}})

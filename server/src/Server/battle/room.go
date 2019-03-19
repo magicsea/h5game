@@ -47,7 +47,7 @@ type Room struct {
 func NewRoom(msg *msgs.CreateBattle, context service.Context) (*actor.PID, error) {
 	p := &Room{roomId: msg.RoomId, roomType: msg.Rtype, stageId: msg.StageId, playerInfos: msg.Players}
 	p.Init(context.Self())
-	props := actor.FromInstance(p)
+	props := actor.PropsFromProducer(func() actor.Actor {return p})
 	pid := context.Spawn(props)
 	p.selfPID = pid
 

@@ -32,7 +32,8 @@ func NewAgentActor(context service.Context, agent gateframework.Agent) *AgentAct
 	//创建actor
 	//r, err := parentPid.RequestFuture(&msgs.NewChild{}, 3*time.Second).Result()
 	ab := &AgentActor{verified: false, bindAgent: agent}
-	pid := context.Spawn(actor.FromInstance(ab))
+	props := actor.PropsFromProducer(func() actor.Actor { return &AgentActor{verified: false, bindAgent: agent} })
+	pid := context.Spawn(props)
 	ab.pid = pid
 	ab.parentPid = context.Self()
 	ab.bindServers = make(map[int]*actor.PID)
@@ -232,9 +233,9 @@ func (ab *AgentActor) SendClientPack(msgId interface{}, rawdata []byte) {
 		log.Error("SendClientPack marshal error:id=%v,%s", msgId, err.Error())
 		return
 	}
-	// if msgId != "snap" {
-	// 	log.Info("send:%s,id=%s,r=%s", string(data), msgId, string(rawdata))
-	// }
+	if msgId != "snap" {
+		log.Info("send:%s,id=%s,r=%s", string(data), msgId, string(rawdata))
+	}
 	ab.bindAgent.WriteMsg(data)
 }
 

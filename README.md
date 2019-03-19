@@ -1,9 +1,9 @@
 # h5game
 io类型h5游戏，客户端使用ts版cocos creator。服务器使用golang actor分布式框架,可伸缩部署。
-[demo试玩地址](http://magicsea.top:8081/web-mobile/)
+[demo试玩地址](http://magicsea.top/web-mobile/)
 
 ## 客户端依赖
-- cocos creator 1.8
+- cocos creator 1.8(2.0以上版本不支持)
 
 ## 服务器源码依赖
 ```

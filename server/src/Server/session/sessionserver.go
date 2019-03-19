@@ -52,9 +52,9 @@ func (s *SessionService) GetSessionInfo(context service.Context) {
 	msg := context.Message().(*msgs.GetSessionInfo)
 	ss := s.sessionMgr.GetSession(msg.Uid)
 	if ss != nil {
-		context.Tell(context.Sender(), &msgs.GetSessionInfoResult{Result: msgs.OK, UserInfo: ss.userInfo, AgentPID: ss.agentPid})
+		context.Send(context.Sender(), &msgs.GetSessionInfoResult{Result: msgs.OK, UserInfo: ss.userInfo, AgentPID: ss.agentPid})
 	} else {
-		context.Tell(context.Sender(), &msgs.GetSessionInfoResult{Result: msgs.Fail})
+		context.Send(context.Sender(), &msgs.GetSessionInfoResult{Result: msgs.Fail})
 	}
 }
 
@@ -64,9 +64,9 @@ func (s *SessionService) GetSessionInfoByName(context service.Context) {
 	msg := context.Message().(*msgs.GetSessionInfoByName)
 	ss := s.sessionMgr.GetSessionByName(msg.Name)
 	if ss != nil {
-		context.Tell(context.Sender(), &msgs.GetSessionInfoResult{Result: msgs.OK, UserInfo: ss.userInfo, AgentPID: ss.agentPid})
+		context.Send(context.Sender(), &msgs.GetSessionInfoResult{Result: msgs.OK, UserInfo: ss.userInfo, AgentPID: ss.agentPid})
 	} else {
-		context.Tell(context.Sender(), &msgs.GetSessionInfoResult{Result: msgs.Fail})
+		context.Send(context.Sender(), &msgs.GetSessionInfoResult{Result: msgs.Fail})
 	}
 	fmt.Println("GetSessionInfoByName end")
 }

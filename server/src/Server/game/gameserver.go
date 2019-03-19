@@ -158,7 +158,7 @@ func (s *GameService) OnUserCheckLogin(context service.Context) {
 	_, err := GetRedisGame().Get(tokenkey).Result()
 	if err != nil {
 		log.Error("OnUserCheckLogin,no found player,token=%v", tokenkey)
-		context.Tell(context.Sender(), &msgs.CheckLoginResult{Result: msgs.KeyError})
+		context.Send(context.Sender(), &msgs.CheckLoginResult{Result: msgs.KeyError})
 		return
 	}
 
