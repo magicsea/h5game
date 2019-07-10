@@ -2,6 +2,7 @@ package login
 
 import (
 	"Server/cluster"
+	"errors"
 	"fmt"
 	"gameproto/msgs"
 	"github.com/magicsea/ganet/config"
@@ -59,6 +60,43 @@ func (s *LoginService) OnStart(as *service.ActorService) {
 
 }
 
+func doCreateAcc(acc,pwd string)  error {
+	log.Info("doCreateAcc:",acc,pwd)
+	if len(acc) < 1 || len(pwd) < 1 {
+		return errors.New(fmt.Sprintf("账号密码都不能为空"))
+	}
+
+	key := "User:nameindex:" + acc
+	r := db.GetRedisGame().Get(key).Val()
+	// if err1!=nil {
+	// 	registBackError(w,"数据插入,获取索引出错",err1)
+	// 	return;
+	// }
+	if len(r) > 0 {
+		return errors.New(fmt.Sprintf("已经存在的账号"))
+	}
+
+	//插入
+	gamedb := db.GetRedisGame()
+	id, err2 := gamedb.Incr("User:Id").Result()
+	if err2 != nil {
+		return errors.New(fmt.Sprintf("数据插入id出错 %v", err2))
+	}
+
+	var user = &db.User{Id: id, Account: acc, Password: pwd, RegisterTime: time.Now().Unix()}
+	if err := db.SetRedisObject(user, id, gamedb); err != nil {
+		return errors.New(fmt.Sprintf("数据插入出错 %v", err))
+	}
+
+	//设置索引
+	if err:=db.GetRedisGame().Set(key, id, 0);err!=nil {
+		return nil
+	}
+
+
+	return nil
+}
+
 //注册
 func regist(w http.ResponseWriter, req *http.Request) {
 	w.Header().Set("Access-Control-Allow-Origin", "*")
@@ -78,41 +116,10 @@ func regist(w http.ResponseWriter, req *http.Request) {
 		pwd = al[0]
 	}
 
-	if len(acc) < 1 || len(pwd) < 1 {
-		registBackError(w, "账号密码都不能为空", nil)
-		return
-	}
-
 	log.Info("reg account:acc=%s,pwd=%s", acc, pwd)
-
-	key := "User:nameindex:" + acc
-	r := db.GetRedisGame().Get(key).Val()
-	// if err1!=nil {
-	// 	registBackError(w,"数据插入,获取索引出错",err1)
-	// 	return;
-	// }
-	if len(r) > 0 {
-		registBackError(w, "已经存在的账号", nil)
-		return
+	if err:= doCreateAcc(acc,pwd);err!=nil {
+		registBackError(w, err.Error(), err)
 	}
-
-	//插入
-	gamedb := db.GetRedisGame()
-	id, err2 := gamedb.Incr("User:Id").Result()
-	if err2 != nil {
-		registBackError(w, "数据插入id出错", err2)
-		return
-	}
-
-	var user = &db.User{Id: id, Account: acc, Password: pwd, RegisterTime: time.Now().Unix()}
-	if err := db.SetRedisObject(user, id, gamedb); err != nil {
-		registBackError(w, "数据插入出错", err)
-		return
-	}
-
-	//设置索引
-	db.GetRedisGame().Set(key, id, 0)
-
 	w.Write([]byte("success"))
 }
 
@@ -120,6 +127,9 @@ func registBackError(w http.ResponseWriter, val string, e error) {
 	log.Error("create user db error:%s,%v", val, e)
 	w.Write([]byte(val))
 }
+
+//账号是否自动创建
+const autoCreateAccount = true
 
 //登录
 func login(w http.ResponseWriter, req *http.Request) {
@@ -153,8 +163,18 @@ func login(w http.ResponseWriter, req *http.Request) {
 	key := "User:nameindex:" + acc
 	r, err := db.GetRedisGame().Get(key).Result()
 	if err != nil {
-		loginBackError(w, "get username error:"+key, err)
-		return
+		if autoCreateAccount {
+			createErr := doCreateAcc(acc,pwd)
+			if createErr!=nil {
+				loginBackError(w, "auto create error:"+key, err)
+				return
+			}
+			//query again
+			r, err = db.GetRedisGame().Get(key).Result()
+		} else {
+			loginBackError(w, "get username error:"+key, err)
+			return
+		}
 	}
 	if len(r) < 1 {
 		loginBackError(w, "username not exist:"+key, nil)
@@ -169,10 +189,12 @@ func login(w http.ResponseWriter, req *http.Request) {
 		loginBackError(w, "not found user:"+r, e)
 		return
 	}
-	if user.Password != pwd {
-		loginBackError(w, "password error:"+user.Password+"!="+pwd, nil)
-		return
-	}
+
+	//调试先不验证
+	//if user.Password != pwd {
+	//	loginBackError(w, "password error:"+user.Password+"!="+pwd, nil)
+	//	return
+	//}
 
 	//保存
 	db.SetRedisObjectField(user, r, gamedb, "LastLoginTime", now)
@@ -180,7 +202,7 @@ func login(w http.ResponseWriter, req *http.Request) {
 
 	//保存token
 
-	resp, err := OnUserLogin(uint64(id))
+	resp, err := onUserLogin(uint64(id))
 	if err == nil {
 		var s, _ = proto.Marshal(resp)
 		w.Write(s)
@@ -192,7 +214,7 @@ func login(w http.ResponseWriter, req *http.Request) {
 }
 
 //玩家登陆
-func OnUserLogin(id uint64) (*gameproto.UserLoginResult, error) {
+func onUserLogin(id uint64) (*gameproto.UserLoginResult, error) {
 	//请求gate
 	result, err := cluster.GetServicePID("center").Ask(&msgs.ApplyService{"gate"})
 	if err != nil {
