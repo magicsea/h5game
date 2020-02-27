@@ -33,9 +33,8 @@ go get github.com/magicsea/ganet
         "poolsize":10,
         "dbs":[0,1,2,3,4]
     },
+  "proto":"json",//消息参数协议打包方式,支持protobuf,json
   ```
-
-"proto":"json",//消息参数协议打包方式,支持protobuf,json
 
 
 - 启动
