@@ -37,15 +37,12 @@ go get github.com/magicsea/ganet
 
 "proto":"json",//消息参数协议打包方式,支持protobuf,json
 
-```
 
 - 启动
 ```
-
 - windows 执行 StartSingleServer.bat(单进程方式) 或者 StartMultiServer.bat(多进程方式)
 - linux 执行./run.sh start
-  
-  ```
+```
   
   ## TODO:
 - [x] 登录、聊天、个人信息修改、基本战斗
