@@ -5,7 +5,15 @@ io类型h5游戏，客户端使用ts版cocos creator。服务器使用golang act
 
 ## 客户端依赖
 
-- cocos creator 1.8(2.0以上版本不支持)
+- cocos creator 2.4.0
+  
+  
+
+### 客户端已知问题：
+
+- 升级引擎后一些输入框默认显示有问题，需要删了重新摆
+
+- toggle的改动，导致头像不能显示
 
 ## 服务器源码依赖
 
@@ -36,12 +44,15 @@ go get github.com/magicsea/ganet
   "proto":"json",//消息参数协议打包方式,支持protobuf,json
   ```
 
-
 - 启动
-```
+  
+  ```
 - windows 执行 StartSingleServer.bat(单进程方式) 或者 StartMultiServer.bat(多进程方式)
 - linux 执行./run.sh start
-```
+  
+  ```
+  
+  ```
   
   ## TODO:
 - [x] 登录、聊天、个人信息修改、基本战斗
