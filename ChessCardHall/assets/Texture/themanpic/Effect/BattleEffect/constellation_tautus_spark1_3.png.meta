@@ -1,12 +1,18 @@
 {
-  "ver": "1.0.0",
+  "ver": "2.3.5",
   "uuid": "3d3d0314-b9b7-4f1c-ac19-0f614c670729",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 89,
+  "height": 77,
+  "platformSettings": {},
   "subMetas": {
     "constellation_tautus_spark1_3": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "98ea108b-781a-42c3-80c1-35ae977a48a8",
       "rawTextureUuid": "3d3d0314-b9b7-4f1c-ac19-0f614c670729",
       "trimType": "auto",

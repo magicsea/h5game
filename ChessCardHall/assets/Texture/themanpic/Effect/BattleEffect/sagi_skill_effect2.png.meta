@@ -1,12 +1,18 @@
 {
-  "ver": "1.0.0",
+  "ver": "2.3.5",
   "uuid": "9c363699-d030-4cf6-9104-59f7d2acc740",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 98,
+  "height": 144,
+  "platformSettings": {},
   "subMetas": {
     "sagi_skill_effect2": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "e9615f6a-a870-433d-a3a0-eaf08f50a6b6",
       "rawTextureUuid": "9c363699-d030-4cf6-9104-59f7d2acc740",
       "trimType": "auto",

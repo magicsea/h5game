@@ -75,7 +75,7 @@ export default class Tank extends cc.Component {
      
         let r = cc.Vec2.UP.signAngle(dir)*180/Math.PI//new cc.Vec2(10,10)
         //console.log("faceto:",dir," rotato=",r)
-        this.body.rotation = r
+        this.body.angle = r
     }
 
     setMoveVec(vec:cc.Vec2) {

@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.0",
+  "ver": "1.2.0",
   "uuid": "56f2f17e-30c7-4033-8049-37256d611231",
   "maxWidth": 1024,
   "maxHeight": 1024,
@@ -7,11 +7,15 @@
   "allowRotation": true,
   "forceSquared": false,
   "powerOfTwo": true,
-  "heuristices": "BestAreaFit",
+  "algorithm": "MaxRects",
   "format": "png",
   "quality": 80,
   "contourBleed": false,
   "paddingBleed": false,
   "filterUnused": false,
+  "packable": false,
+  "premultiplyAlpha": false,
+  "filterMode": "bilinear",
+  "platformSettings": {},
   "subMetas": {}
 }

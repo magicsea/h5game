@@ -1,12 +1,18 @@
 {
-  "ver": "1.0.0",
+  "ver": "2.3.5",
   "uuid": "a5c8654f-279a-4f13-b1ce-88e02c673ba8",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 54,
+  "height": 60,
+  "platformSettings": {},
   "subMetas": {
     "face_bg_cover": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "58c34278-5699-4446-af87-bf102a9cc80d",
       "rawTextureUuid": "a5c8654f-279a-4f13-b1ce-88e02c673ba8",
       "trimType": "auto",

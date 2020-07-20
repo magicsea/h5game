@@ -8,7 +8,7 @@
   "type": "Texture Packer",
   "subMetas": {
     "Block_0": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "dd5a61e7-1159-418e-9d35-ba4e9a665e2b",
       "trimType": "auto",
       "trimThreshold": 1,
@@ -29,7 +29,7 @@
       "subMetas": {}
     },
     "Block_1": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "22afea71-e24f-4d94-b801-ee8f2a5d8d16",
       "trimType": "auto",
       "trimThreshold": 1,
@@ -50,7 +50,7 @@
       "subMetas": {}
     },
     "Block_2": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "75b68c0d-6eae-408e-b805-8a2b29d71491",
       "trimType": "auto",
       "trimThreshold": 1,
@@ -71,7 +71,7 @@
       "subMetas": {}
     },
     "Block_3": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "c33a743e-73a2-48cd-971a-2aa6c7097040",
       "trimType": "auto",
       "trimThreshold": 1,
@@ -92,7 +92,7 @@
       "subMetas": {}
     },
     "Block_4": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "c157ab5f-42ec-406b-8339-0711bbdad5a0",
       "trimType": "auto",
       "trimThreshold": 1,
@@ -113,7 +113,7 @@
       "subMetas": {}
     },
     "Block_5": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "6717da61-03d9-4a0e-bdad-0cbf77bcd438",
       "trimType": "auto",
       "trimThreshold": 1,
@@ -134,7 +134,7 @@
       "subMetas": {}
     },
     "Block_6": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "4c5e4ec5-972f-4ad0-90f4-1c8605cf8c7b",
       "trimType": "auto",
       "trimThreshold": 1,
@@ -155,7 +155,7 @@
       "subMetas": {}
     },
     "Block_7": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "7a0e051b-e323-4622-993f-2f595ea9faa8",
       "trimType": "auto",
       "trimThreshold": 1,
@@ -176,7 +176,7 @@
       "subMetas": {}
     },
     "Block_8": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "015b7887-6efc-4a5a-8cea-3e773298cb2d",
       "trimType": "auto",
       "trimThreshold": 1,
@@ -197,7 +197,7 @@
       "subMetas": {}
     },
     "Block_9": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "b80cd721-c523-4307-9def-d381d3b30db7",
       "trimType": "auto",
       "trimThreshold": 1,
@@ -218,7 +218,7 @@
       "subMetas": {}
     },
     "Block_10": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "56662dbb-7b68-436c-b25d-1d218d5b68f6",
       "trimType": "auto",
       "trimThreshold": 1,
@@ -239,7 +239,7 @@
       "subMetas": {}
     },
     "Block_11": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "d0d3b8d3-03e1-4499-b50f-9a0166b036e1",
       "trimType": "auto",
       "trimThreshold": 1,
@@ -260,7 +260,7 @@
       "subMetas": {}
     },
     "Block_12": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "0b29914b-f50d-4f51-a658-76d5282cf2ef",
       "trimType": "auto",
       "trimThreshold": 1,
@@ -281,7 +281,7 @@
       "subMetas": {}
     },
     "Block_13": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "2e858ce8-301b-4b6c-b6d0-f0b5d59bd1a9",
       "trimType": "auto",
       "trimThreshold": 1,

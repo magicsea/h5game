@@ -1,12 +1,18 @@
 {
-  "ver": "1.0.0",
+  "ver": "2.3.5",
   "uuid": "682bfd64-95de-4a9d-b42b-6ab098032b05",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 148,
+  "height": 85,
+  "platformSettings": {},
   "subMetas": {
     "eva_st1h_spark1_3": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "8daf38c7-dad8-41a0-9fc7-bb5372fce1b2",
       "rawTextureUuid": "682bfd64-95de-4a9d-b42b-6ab098032b05",
       "trimType": "auto",

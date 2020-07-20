@@ -79,7 +79,7 @@ export default class network extends cc.Component {
         }
         socket.onmessage = (ev: MessageEvent)=> {
             var raw = decoder.decode(ev.data)
-            //console.warn(`=============onmessage raw:${raw}`)
+            console.warn(`=============onmessage raw:${raw}`)
             vv.wsDistributeNetMessage(raw)
         }
 
@@ -92,7 +92,7 @@ export default class network extends cc.Component {
             vv.eventEmit('signIn', data);
         })
         vv.wson("logininfo",(msg)=>{
-            console.warn("###login info:"+msg.nickname)
+            console.warn("###login info:"+msg.nickname,msg.headId,msg)
             let tmsg = msg as loginproto.LoginInfo
             vv.userInfo = msg
         })

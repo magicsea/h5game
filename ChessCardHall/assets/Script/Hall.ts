@@ -116,8 +116,9 @@ export default class NewClass extends cc.Component {
 
     /**更新玩家信息 */
     updateUserInfo() {
-        console.info("updateUserInfo...lv",vv.userInfo.level)
+        cc.log("updateUserInfo...lv",vv.userInfo.level,vv.userInfo.headId)
         this.icon.spriteFrame = (vv.userInfo.sex === 1 ? this.iconBoys[vv.userInfo.headId - 1] : this.iconGirls[vv.userInfo.headId - 1]);
+        cc.log("icon:",this.icon.spriteFrame)
         this.nickname.string = vv.userInfo.nickname;
         //let level = vv.expToLevel(vv.userInfo.exp);
         let level = vv.userInfo.level

@@ -1,12 +1,18 @@
 {
-  "ver": "1.0.0",
+  "ver": "2.3.5",
   "uuid": "3e2f2cb3-54ef-49f2-ad29-a2d5a75a8bbe",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 53,
+  "height": 74,
+  "platformSettings": {},
   "subMetas": {
     "pkzm01": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "043e50a9-7612-48e1-91b4-04e304a20113",
       "rawTextureUuid": "3e2f2cb3-54ef-49f2-ad29-a2d5a75a8bbe",
       "trimType": "auto",

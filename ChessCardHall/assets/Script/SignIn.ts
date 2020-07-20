@@ -82,7 +82,7 @@ export default class Signln extends cc.Component {
 
                 this.scheduleOnce(() => {
                     vv.initUseData();
-                    vv.loadScene('hall');
+                    vv.loadScene('lobby');
                 }, 0.5);
 
                 //保存游客账号
@@ -126,7 +126,7 @@ export default class Signln extends cc.Component {
                 //vv.userInfo = data[1];
                 this.scheduleOnce(() => {
                     vv.initUseData();
-                    vv.loadScene('hall');
+                    vv.loadScene('lobby');
                 }, 0.5);
 
                 //保存登录账号

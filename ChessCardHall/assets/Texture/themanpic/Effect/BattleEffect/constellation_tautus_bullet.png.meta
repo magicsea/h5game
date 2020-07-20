@@ -1,12 +1,18 @@
 {
-  "ver": "1.0.0",
+  "ver": "2.3.5",
   "uuid": "07b4f52d-a0cc-4ce7-960a-56ede47c8124",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 33,
+  "height": 90,
+  "platformSettings": {},
   "subMetas": {
     "constellation_tautus_bullet": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "46c4ac90-6a77-4228-beb8-1756bb32fe4a",
       "rawTextureUuid": "07b4f52d-a0cc-4ce7-960a-56ede47c8124",
       "trimType": "auto",

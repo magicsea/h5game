@@ -1,12 +1,18 @@
 {
-  "ver": "1.0.0",
+  "ver": "2.3.5",
   "uuid": "9760e4e9-5fb3-4bcb-94b0-e842b09d7456",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 29,
+  "height": 90,
+  "platformSettings": {},
   "subMetas": {
     "constellation_sagittarius_bullet": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "961afe96-76fb-460d-b095-25f39c3c4521",
       "rawTextureUuid": "9760e4e9-5fb3-4bcb-94b0-e842b09d7456",
       "trimType": "auto",

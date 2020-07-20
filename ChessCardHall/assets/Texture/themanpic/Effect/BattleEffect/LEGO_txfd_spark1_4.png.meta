@@ -1,12 +1,18 @@
 {
-  "ver": "1.0.0",
+  "ver": "2.3.5",
   "uuid": "70458e12-b463-4e03-a90e-e639acd850d4",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 80,
+  "height": 80,
+  "platformSettings": {},
   "subMetas": {
     "LEGO_txfd_spark1_4": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "37f85192-9c98-4e6f-8f79-ebfee595a33f",
       "rawTextureUuid": "70458e12-b463-4e03-a90e-e639acd850d4",
       "trimType": "auto",

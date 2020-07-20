@@ -1,12 +1,18 @@
 {
-  "ver": "1.0.0",
+  "ver": "2.3.5",
   "uuid": "fe195acd-987e-4bf9-a6d5-1e27d2e5bbed",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 104,
+  "height": 125,
+  "platformSettings": {},
   "subMetas": {
     "constellation_sagittarius_spark2_3": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "bddf9134-32b5-4c41-936f-a62b3f49b541",
       "rawTextureUuid": "fe195acd-987e-4bf9-a6d5-1e27d2e5bbed",
       "trimType": "auto",

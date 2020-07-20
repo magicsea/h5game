@@ -47,11 +47,12 @@ export default class NewClass extends cc.Component {
 
     start() {
         for (let i = 0; i < this.toggles.length; i++) {
-            this.toggles[i].on('toggle', (event) => {
-                vv.playAudio("click")
+            this.toggles[i].on('toggle', (event,o) => {
+                //vv.playAudio("click")
                 this.sex = Number(event.target.name[0]);
                 this.headId = Number(event.target.name[1]);
-            });
+                cc.log("select:", this.sex,this.headId,event,o)
+            },this.toggles[i]);
         }
 
         //创建按钮
@@ -72,6 +73,7 @@ export default class NewClass extends cc.Component {
             cc.log("修改资料:" + JSON.stringify(data));
             if (data[0]) {
                 vv.showTip("修改成功");
+                cc.log("修改成功:",this.sex,this.headId)
                 vv.userInfo.nickname = this.editBoxNickname.string;
                 vv.userInfo.sex = this.sex;
                 vv.userInfo.headId = this.headId;

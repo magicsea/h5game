@@ -1,12 +1,18 @@
 {
-  "ver": "1.0.0",
+  "ver": "2.3.5",
   "uuid": "18b1bbe4-4947-4c5d-b32d-a7d51cc17883",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 113,
+  "height": 105,
+  "platformSettings": {},
   "subMetas": {
     "dlboom02": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "6fde2557-0541-4434-9c90-a5254cf1fde3",
       "rawTextureUuid": "18b1bbe4-4947-4c5d-b32d-a7d51cc17883",
       "trimType": "auto",

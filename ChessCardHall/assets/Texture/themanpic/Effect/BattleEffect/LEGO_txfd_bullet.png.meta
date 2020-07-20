@@ -1,12 +1,18 @@
 {
-  "ver": "1.0.0",
+  "ver": "2.3.5",
   "uuid": "6d8a5433-1a09-47c5-840f-5428aa5e8c3d",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 25,
+  "height": 51,
+  "platformSettings": {},
   "subMetas": {
     "LEGO_txfd_bullet": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "2ce40001-a837-4301-a9c1-ebaf50cb07a8",
       "rawTextureUuid": "6d8a5433-1a09-47c5-840f-5428aa5e8c3d",
       "trimType": "auto",

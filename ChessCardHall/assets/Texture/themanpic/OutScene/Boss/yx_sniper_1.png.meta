@@ -1,12 +1,18 @@
 {
-  "ver": "1.0.0",
+  "ver": "2.3.5",
   "uuid": "13eea083-a783-429b-814a-390944f435b4",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 10,
+  "height": 9,
+  "platformSettings": {},
   "subMetas": {
     "yx_sniper_1": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "8c8f3dd7-eb19-47ea-94cb-fabd69abdbe7",
       "rawTextureUuid": "13eea083-a783-429b-814a-390944f435b4",
       "trimType": "auto",

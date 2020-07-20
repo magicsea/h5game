@@ -1,12 +1,18 @@
 {
-  "ver": "1.0.0",
+  "ver": "2.3.5",
   "uuid": "d7c3cc1e-d30a-4716-b527-5e5bee9be617",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 47,
+  "height": 55,
+  "platformSettings": {},
   "subMetas": {
     "zdjs07": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "737f79bb-cc57-4c08-bbe8-92e6a7080384",
       "rawTextureUuid": "d7c3cc1e-d30a-4716-b527-5e5bee9be617",
       "trimType": "auto",

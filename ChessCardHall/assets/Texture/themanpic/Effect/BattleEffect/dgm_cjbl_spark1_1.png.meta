@@ -1,12 +1,18 @@
 {
-  "ver": "1.0.0",
+  "ver": "2.3.5",
   "uuid": "b3ca025b-d89e-4fc2-af51-2a7397d8713b",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 56,
+  "height": 51,
+  "platformSettings": {},
   "subMetas": {
     "dgm_cjbl_spark1_1": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "138660f4-7abb-4c9f-8f47-245620b71fb6",
       "rawTextureUuid": "b3ca025b-d89e-4fc2-af51-2a7397d8713b",
       "trimType": "auto",

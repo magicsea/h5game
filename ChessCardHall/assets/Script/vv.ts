@@ -55,8 +55,8 @@ export default class vv {
     }
 
     static GetServerURL() :string {
-        return "http://127.0.0.1:9900"
-        //return "http://47.52.241.13:9900"
+        //return "http://127.0.0.1:9900"
+        return "http://magicsea.top:9900"
     }
 
     /** 根据经验计算出等级 */
@@ -172,17 +172,18 @@ export default class vv {
     /** 事件监听 */
     static eventOn(event: string, cb: Function, target: object) {
         cc.find("Canvas").on(event, function (event) {
-            cb(event.detail);
+            cb(event);
         }, target);
     }
 
     /** 事件发射 */
     static eventEmit(event: string, data?: any) {
         cc.find("Canvas").emit(event, data);
+        //cc.find("Canvas").emit(event, data,target);
     }
 
     /** 播放音频 */
-    static playAudio(url: string, loop?: boolean): any {
+    static playAudio(url: string, loop?: boolean) {
         if (!url) {
             cc.log("playAudio err: url is null");
             return;
@@ -190,9 +191,16 @@ export default class vv {
 
         if (!loop) loop = false;
 
-        let audioID = cc.audioEngine.play(cc.url.raw("resources/Audio/" + url + ".mp3"), loop, 1);
+        cc.log("play audio  pre：",url)
+        let path = "Audio/" + url + ".mp3"
+        cc.loader.loadRes(path, cc.AudioClip, (err, audioClip)=> {
+            cc.audioEngine.play(audioClip,loop,1)
+            });
+        cc.log("play audio：",path)
+      
+        //let audioID = cc.audioEngine.play(cc.url.raw("resources/Audio/" + url + ".mp3"), loop, 1);
 
-        return audioID;
+        //return audioID;
     }
 
     /** 提示框 font:显示的文字 color:文字的颜色(默认:120,120,120)  fontSize:文字大小(默认30号) */
@@ -340,6 +348,6 @@ export default class vv {
     //网络消息事件
     static wson(msgId:string,callback:Function) {
         this.mapNetHandle[msgId]=callback
-        console.warn("=============wson id:"+msgId+"  func:"+typeof(callback))
+        //console.warn("=============wson id:"+msgId+"  func:"+typeof(callback))
     }
 }

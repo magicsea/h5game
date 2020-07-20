@@ -9,7 +9,7 @@
   "type": "Texture Packer",
   "subMetas": {
     "Block_0_0": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "d3fff5d1-548b-4080-a2f5-30d42824aa21",
       "rawTextureUuid": "e99a1686-eda4-4f4e-8d6e-4456a327413b",
       "trimType": "auto",
@@ -31,7 +31,7 @@
       "subMetas": {}
     },
     "Block_0_1": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "08406e2d-cb69-4278-ad08-9160dc50aea4",
       "rawTextureUuid": "e99a1686-eda4-4f4e-8d6e-4456a327413b",
       "trimType": "auto",
@@ -53,7 +53,7 @@
       "subMetas": {}
     },
     "Block_0_2": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "0725bf15-eab1-4a8b-b315-fc1e03723d2a",
       "rawTextureUuid": "e99a1686-eda4-4f4e-8d6e-4456a327413b",
       "trimType": "auto",
@@ -75,7 +75,7 @@
       "subMetas": {}
     },
     "Block_0_3": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "b7aa8257-8833-4002-9008-ffb5aaf7bc9c",
       "rawTextureUuid": "e99a1686-eda4-4f4e-8d6e-4456a327413b",
       "trimType": "auto",
@@ -97,7 +97,7 @@
       "subMetas": {}
     },
     "Block_0_4": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "2c00133f-2272-4100-888a-ad1ecc1658f0",
       "rawTextureUuid": "e99a1686-eda4-4f4e-8d6e-4456a327413b",
       "trimType": "auto",
@@ -119,7 +119,7 @@
       "subMetas": {}
     },
     "Block_0_5": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "b0ef2e0a-adb8-41b7-903f-babffe55f28d",
       "rawTextureUuid": "e99a1686-eda4-4f4e-8d6e-4456a327413b",
       "trimType": "auto",
@@ -141,7 +141,7 @@
       "subMetas": {}
     },
     "Block_0_6": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "14b46d4f-d427-4895-8965-8bbc7b91163c",
       "rawTextureUuid": "e99a1686-eda4-4f4e-8d6e-4456a327413b",
       "trimType": "auto",
@@ -163,7 +163,7 @@
       "subMetas": {}
     },
     "Block_0_7": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "966bd8f4-86f8-46cb-b9b2-2da83166d0d4",
       "rawTextureUuid": "e99a1686-eda4-4f4e-8d6e-4456a327413b",
       "trimType": "auto",
@@ -185,7 +185,7 @@
       "subMetas": {}
     },
     "Block_1_0": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "2716df60-3eeb-4f76-9493-bde3ce250697",
       "rawTextureUuid": "e99a1686-eda4-4f4e-8d6e-4456a327413b",
       "trimType": "auto",
@@ -207,7 +207,7 @@
       "subMetas": {}
     },
     "Block_1_1": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "d0ebf165-9a84-4930-94c2-a09265c36e62",
       "rawTextureUuid": "e99a1686-eda4-4f4e-8d6e-4456a327413b",
       "trimType": "auto",
@@ -229,7 +229,7 @@
       "subMetas": {}
     },
     "Block_1_2": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "fad1c128-ab4b-4138-a09c-acafbebe7ff1",
       "rawTextureUuid": "e99a1686-eda4-4f4e-8d6e-4456a327413b",
       "trimType": "auto",
@@ -251,7 +251,7 @@
       "subMetas": {}
     },
     "Block_1_3": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "6c044fd1-fdc1-42f8-9593-33f9fd410353",
       "rawTextureUuid": "e99a1686-eda4-4f4e-8d6e-4456a327413b",
       "trimType": "auto",
@@ -273,7 +273,7 @@
       "subMetas": {}
     },
     "Block_1_4": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "f47b446e-2600-4d45-bb77-8782090c3f1b",
       "rawTextureUuid": "e99a1686-eda4-4f4e-8d6e-4456a327413b",
       "trimType": "auto",
@@ -295,7 +295,7 @@
       "subMetas": {}
     },
     "Block_1_5": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "fd7cfe39-a590-46bc-beab-3e073eddc0ac",
       "rawTextureUuid": "e99a1686-eda4-4f4e-8d6e-4456a327413b",
       "trimType": "auto",
@@ -317,7 +317,7 @@
       "subMetas": {}
     },
     "Block_1_6": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "be3ee1ff-fd09-46b8-bd38-be26a879310c",
       "rawTextureUuid": "e99a1686-eda4-4f4e-8d6e-4456a327413b",
       "trimType": "auto",
@@ -339,7 +339,7 @@
       "subMetas": {}
     },
     "Block_1_7": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "cf661059-e93a-452e-9a7a-4504a758369f",
       "rawTextureUuid": "e99a1686-eda4-4f4e-8d6e-4456a327413b",
       "trimType": "auto",
@@ -361,7 +361,7 @@
       "subMetas": {}
     },
     "Block_2_0": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "1a7560db-b09b-4aa6-9cf9-f78dc61dd224",
       "rawTextureUuid": "e99a1686-eda4-4f4e-8d6e-4456a327413b",
       "trimType": "auto",
@@ -383,7 +383,7 @@
       "subMetas": {}
     },
     "Block_2_1": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "8c81c8c0-1a88-4a59-9381-63593c417072",
       "rawTextureUuid": "e99a1686-eda4-4f4e-8d6e-4456a327413b",
       "trimType": "auto",
@@ -405,7 +405,7 @@
       "subMetas": {}
     },
     "Block_2_2": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "15641b6b-f207-4cc3-9fab-ca8da3cb8353",
       "rawTextureUuid": "e99a1686-eda4-4f4e-8d6e-4456a327413b",
       "trimType": "auto",
@@ -427,7 +427,7 @@
       "subMetas": {}
     },
     "Block_2_3": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "af10265c-d395-49f0-9071-64827c6d1ed2",
       "rawTextureUuid": "e99a1686-eda4-4f4e-8d6e-4456a327413b",
       "trimType": "auto",
@@ -449,7 +449,7 @@
       "subMetas": {}
     },
     "Block_2_4": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "d0a765d7-8a0c-40b3-b5ed-dc15c427d342",
       "rawTextureUuid": "e99a1686-eda4-4f4e-8d6e-4456a327413b",
       "trimType": "auto",
@@ -471,7 +471,7 @@
       "subMetas": {}
     },
     "Block_2_5": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "fe1f4099-f29e-4726-8913-9bd6adcdea95",
       "rawTextureUuid": "e99a1686-eda4-4f4e-8d6e-4456a327413b",
       "trimType": "auto",
@@ -493,7 +493,7 @@
       "subMetas": {}
     },
     "Block_2_6": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "e59a963b-84ee-429a-8d99-fe16a7a12a24",
       "rawTextureUuid": "e99a1686-eda4-4f4e-8d6e-4456a327413b",
       "trimType": "auto",
@@ -515,7 +515,7 @@
       "subMetas": {}
     },
     "Block_2_7": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "2b31ad60-a791-49c9-a97b-5f21b908fccf",
       "rawTextureUuid": "e99a1686-eda4-4f4e-8d6e-4456a327413b",
       "trimType": "auto",
@@ -537,7 +537,7 @@
       "subMetas": {}
     },
     "Block_3_0": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "d6ffe39d-bfb9-494b-9142-505a1032b2f4",
       "rawTextureUuid": "e99a1686-eda4-4f4e-8d6e-4456a327413b",
       "trimType": "auto",
@@ -559,7 +559,7 @@
       "subMetas": {}
     },
     "Block_3_1": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "c6067eed-bde3-48f5-8a22-6c1b1af2e1a6",
       "rawTextureUuid": "e99a1686-eda4-4f4e-8d6e-4456a327413b",
       "trimType": "auto",
@@ -581,7 +581,7 @@
       "subMetas": {}
     },
     "Block_3_2": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "1f419e87-5156-4e1f-83d1-dcd2fdfd01d6",
       "rawTextureUuid": "e99a1686-eda4-4f4e-8d6e-4456a327413b",
       "trimType": "auto",
@@ -603,7 +603,7 @@
       "subMetas": {}
     },
     "Block_3_3": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "6598fd29-5bf7-467a-90c9-e5bcdf5f401a",
       "rawTextureUuid": "e99a1686-eda4-4f4e-8d6e-4456a327413b",
       "trimType": "auto",
@@ -625,7 +625,7 @@
       "subMetas": {}
     },
     "Block_3_4": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "db0889fa-a32c-4d08-84d1-8152124f3d4c",
       "rawTextureUuid": "e99a1686-eda4-4f4e-8d6e-4456a327413b",
       "trimType": "auto",
@@ -647,7 +647,7 @@
       "subMetas": {}
     },
     "Block_3_5": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "f2f6d156-7872-40ca-9d36-e4d0dce4a4b6",
       "rawTextureUuid": "e99a1686-eda4-4f4e-8d6e-4456a327413b",
       "trimType": "auto",
@@ -669,7 +669,7 @@
       "subMetas": {}
     },
     "Block_3_6": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "752b1d1f-e609-40a9-b83a-a0aacf405265",
       "rawTextureUuid": "e99a1686-eda4-4f4e-8d6e-4456a327413b",
       "trimType": "auto",
@@ -691,7 +691,7 @@
       "subMetas": {}
     },
     "Block_3_7": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "b1b0413a-a265-4d0c-9eba-ab8824686d0f",
       "rawTextureUuid": "e99a1686-eda4-4f4e-8d6e-4456a327413b",
       "trimType": "auto",

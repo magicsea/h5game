@@ -1,12 +1,18 @@
 {
-  "ver": "1.0.0",
+  "ver": "2.3.5",
   "uuid": "1f0bec48-7008-4320-b13b-0c13d2d2dd01",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 46,
+  "height": 14,
+  "platformSettings": {},
   "subMetas": {
     "enemy_slot": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "68ac61d2-e43d-4e0a-b015-fdb30108cd92",
       "rawTextureUuid": "1f0bec48-7008-4320-b13b-0c13d2d2dd01",
       "trimType": "auto",

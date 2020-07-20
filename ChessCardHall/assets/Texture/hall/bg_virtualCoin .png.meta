@@ -1,12 +1,18 @@
 {
-  "ver": "1.0.0",
+  "ver": "2.3.5",
   "uuid": "3a0882a2-597e-4ac6-9d61-d576e25c2111",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 84,
+  "height": 48,
+  "platformSettings": {},
   "subMetas": {
     "bg_virtualCoin ": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "a6930f2b-007c-4e60-8008-5b8148640bb3",
       "rawTextureUuid": "3a0882a2-597e-4ac6-9d61-d576e25c2111",
       "trimType": "auto",

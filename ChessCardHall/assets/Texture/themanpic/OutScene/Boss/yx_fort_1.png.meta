@@ -1,12 +1,18 @@
 {
-  "ver": "1.0.0",
+  "ver": "2.3.5",
   "uuid": "f0d2ad62-bd96-4879-9036-5e1c17816d46",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 12,
+  "height": 12,
+  "platformSettings": {},
   "subMetas": {
     "yx_fort_1": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "93c44508-f88d-4656-9969-7fce0349eef8",
       "rawTextureUuid": "f0d2ad62-bd96-4879-9036-5e1c17816d46",
       "trimType": "auto",

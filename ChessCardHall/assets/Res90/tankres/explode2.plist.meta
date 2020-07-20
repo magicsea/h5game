@@ -9,7 +9,7 @@
   "type": "Texture Packer",
   "subMetas": {
     "Block_0": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "4e0c7ab9-1f1b-4afc-b767-bc2fd4091359",
       "rawTextureUuid": "e4fbdc1e-304f-484f-8c3f-2a88d00a71bc",
       "trimType": "auto",
@@ -31,7 +31,7 @@
       "subMetas": {}
     },
     "Block_1": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "fc020178-8333-4054-a44a-6d6b4a4835ec",
       "rawTextureUuid": "e4fbdc1e-304f-484f-8c3f-2a88d00a71bc",
       "trimType": "auto",
@@ -53,7 +53,7 @@
       "subMetas": {}
     },
     "Block_2": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "f6a8b08d-1e8b-4745-a338-bca42e0f1679",
       "rawTextureUuid": "e4fbdc1e-304f-484f-8c3f-2a88d00a71bc",
       "trimType": "auto",

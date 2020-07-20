@@ -29,7 +29,7 @@ export default class GameOverUI extends cc.Component {
         //退出按钮
         vv.btnClick(this.btnLeave, () => {
             vv.pauseTouch();//禁止交互操作
-            vv.loadScene('hall');//跳转到登录场景
+            vv.loadScene('lobby');//跳转到登录场景
             vv.socket.emit("b_quit",{})
         });
     }
