@@ -40,8 +40,8 @@ func (s *LobbyService) OnInit() {
 	log.Info("LobbyService init:%v  ", s.queueMgr)
 
 	//清空redis
-	db.GetRedisBattleLoad().FlushDb()
-	db.GetRedisBattle().FlushDb()
+	db.GetRedisBattleLoad().FlushDB()
+	db.GetRedisBattle().FlushDB()
 }
 
 func (s *LobbyService) OnStart(as *service.ActorService) {

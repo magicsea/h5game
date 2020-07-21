@@ -1,0 +1,21 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="GoCommentLeadingSpace" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="GoCommentStart" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="GoErrorStringFormat" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="GoExportedElementShouldHaveComment" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="GoExportedOwnDeclaration" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="GoNameStartsWithPackageName" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="GoReceiverNames" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="GoSnakeCaseUsage" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="GoStructInitializationWithoutFieldNames" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="GoUnitSpecificDurationSuffix" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="GoUnsortedImport" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="SpellCheckingInspection" enabled="false" level="TYPO" enabled_by_default="false">
+      <option name="processCode" value="true" />
+      <option name="processLiterals" value="true" />
+      <option name="processComments" value="true" />
+    </inspection_tool>
+  </profile>
+</component>

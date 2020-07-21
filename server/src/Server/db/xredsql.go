@@ -388,7 +388,7 @@ func Del(key string, redclient *redis.Client) {
 
 //有序集合添加
 func Zadd(keyName string, redclient *redis.Client, score float64, value interface{}) {
-	a := redis.Z{}
+	a := &redis.Z{}
 	a.Score = score
 	a.Member = value
 	redclient.ZAdd(keyName, a)
