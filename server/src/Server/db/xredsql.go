@@ -3,18 +3,15 @@ package db
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/go-redis/redis/v7"
 	"github.com/magicsea/ganet/util"
 	"reflect"
-
-	"github.com/magicsea/ganet/log"
-	gdb "github.com/magicsea/ganet/mysqldb"
 	"strings"
-
+	"github.com/magicsea/ganet/log"
 	"time"
-
-	"github.com/go-redis/redis"
 )
 
+/*
 //穿透获取对象,先那redis，没有再拿mysql
 //必须结构里赋值id，通过传入id相通
 func XRead(o interface{}, id interface{}, redclient *redis.Client, dbclient *gdb.DBClient) (bool, error) {
@@ -77,7 +74,7 @@ func XDelete(o interface{}, id interface{}, redclient *redis.Client, dbclient *g
 	DeleteRedisObject(o, id, redclient)
 	return ok, nil
 }
-
+*/
 //---------------------------------------redis jobs----------------------------------------
 //删除一个hash对象
 func DeleteRedisObject(o interface{}, id interface{}, redclient *redis.Client) {
@@ -404,11 +401,11 @@ func Zrevrange(keyName string, redclient *redis.Client, num int64) []string {
 	return redclient.ZRevRange(keyName, 0, num).Val()
 }
 
-func HSet(tableName, id string, redclient *redis.Client) bool {
+func HSet(tableName, id string, redclient *redis.Client) int64 {
 	return redclient.HSet(tableName, id, 1).Val()
 }
 
-func HSetByValue(tableName, id string, value interface{}, redclient *redis.Client) bool {
+func HSetByValue(tableName, id string, value interface{}, redclient *redis.Client) int64 {
 	return redclient.HSet(tableName, id, value).Val()
 }
 

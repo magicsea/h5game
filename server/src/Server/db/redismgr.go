@@ -5,7 +5,7 @@ import (
 	"Server/config"
 	"time"
 
-	"github.com/go-redis/redis"
+	"github.com/go-redis/redis/v7"
 )
 
 //redis db用途

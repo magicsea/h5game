@@ -43,7 +43,7 @@ func (s *SessionService) OnStart(as *service.ActorService) {
 	as.RegisterMsg(reflect.TypeOf(&msgs.GetSessionInfo{}), s.GetSessionInfo)             //查询玩家信息
 	as.RegisterMsg(reflect.TypeOf(&msgs.GetSessionInfoByName{}), s.GetSessionInfoByName) //查询玩家信息通过名字
 	as.RegisterMsg(reflect.TypeOf(&msgs.UserLeave{}), s.OnUserLeave)                     //玩家掉线
-
+	log.Debug("session OnStart ok!!")
 }
 
 //查询玩家信息

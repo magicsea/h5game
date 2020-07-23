@@ -112,6 +112,7 @@ func (s *GateService) OnStart(as *service.ActorService) {
 
 	gate.Run(s)
 
+	log.Debug("gate OnStart ok!!")
 }
 
 func (s *GateService) OnRun() {
@@ -135,7 +136,7 @@ func (s *GateService) RegToCenter() {
 		ServiceType: s.TypeName,
 		Pid:         s.GetPID(),
 		Values:      []*msgs.ServiceValue{valtcp, valws}}
-	r.GetActorPID().Request(&msg, s.Pid)
+	r.GetActorPID().Request(&msg, s.GetPID())
 	log.Info("GateService RegToCenter !!!")
 }
 

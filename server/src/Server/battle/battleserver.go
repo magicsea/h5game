@@ -49,7 +49,8 @@ func (s *BattleService) OnStart(as *service.ActorService) {
 	as.RegisterMsg(reflect.TypeOf(&msgs.Kick{}), s.OnKick)                    //踢人
 	as.RegisterMsg(reflect.TypeOf(&msgs.Tick{}), s.OnTick)                    //定时任务
 	as.RegisterMsg(reflect.TypeOf(&msgs.AddServiceRep{}), s.OnRegOK)          //注册完成
-	as.RegisterMsg(reflect.TypeOf(&actor.Terminated{}), s.OnDisconnectCenter) //被动断开服务器
+	as.RegisterMsg(reflect.TypeOf(&actor.Terminated{}), s.OnDisconnectCenter)  //被动断开服务器
+	log.Debug("battle OnStart ok!!")
 }
 
 func (s *BattleService) OnRun() {
@@ -74,6 +75,9 @@ func (s *BattleService) RegToCenter() {
 		ServiceType: s.TypeName,
 		Pid:         s.GetPID(),
 		Values:      nil}
+
+	//context := actor.EmptyRootContext
+	//context.Request(r.GetActorPID(),&msg)
 	r.GetActorPID().Request(&msg, s.Pid)
 	log.Info("BattleService RegToCenter !!!")
 }

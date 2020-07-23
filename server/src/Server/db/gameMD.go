@@ -7,11 +7,12 @@ type User struct {
 	Account        string `orm:"column(account)"`
 	Password       string `orm:"column(password)"`
 	RegisterTime   int64  `orm:"column(registerTime)"`
-	LastLoginTime  int64  `orm:"column(lastLoginTime)"`
-	LastLogoutTime int64  `orm:"column(lastLogoutTime)"`
-	BlackTime      int64  `orm:"column(blackTime)"`
-	DeviceId       string `orm:"column(deviceId)"`
-	LoginDays      int64  `orm:"column(loginDays)"`
+	//LastLoginTime  int64  `orm:"column(lastLoginTime)"`
+	//LastLogoutTime int64  `orm:"column(lastLogoutTime)"`
+	//BlackTime      int64  `orm:"column(blackTime)"`
+	//DeviceId       string `orm:"column(deviceId)"`
+	//LoginDays      int64  `orm:"column(loginDays)"`
+
 	//`uid` int(11) NOT NULL AUTO_INCREMENT,
 	//`platformId` varchar(255) CHARACTER SET utf8 NOT NULL,
 	//`registerTime` int(15) NOT NULL DEFAULT '0',

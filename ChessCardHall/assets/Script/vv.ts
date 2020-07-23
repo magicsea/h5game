@@ -55,8 +55,8 @@ export default class vv {
     }
 
     static GetServerURL() :string {
-        //return "http://127.0.0.1:9900"
-        return "http://magicsea.top:9900"
+        return "http://127.0.0.1:9900"
+        //return "http://magicsea.top:9900"
     }
 
     /** 根据经验计算出等级 */

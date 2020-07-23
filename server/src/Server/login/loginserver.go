@@ -61,7 +61,7 @@ func (s *LoginService) OnStart(as *service.ActorService) {
 }
 
 func doCreateAcc(acc,pwd string)  error {
-	log.Info("doCreateAcc:",acc,pwd)
+	log.Info("doCreateAcc:%s,%s",acc,pwd)
 	if len(acc) < 1 || len(pwd) < 1 {
 		return errors.New(fmt.Sprintf("账号密码都不能为空"))
 	}

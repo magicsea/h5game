@@ -53,6 +53,7 @@ func (s *LobbyService) OnStart(as *service.ActorService) {
 	as.RegisterMsg(reflect.TypeOf(&msgs.Tick{}), s.OnTick)
 
 	util.StartLoopTask(time.Second*time.Duration(PVP_WAIT_TIME), s.Tick)
+	log.Debug("lobby OnStart ok!!")
 }
 
 func (s *LobbyService) Tick() {

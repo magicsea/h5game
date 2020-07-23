@@ -1,4 +1,5 @@
-set oldpath=%GOPATH%
-set GOPATH=%oldpath%;%CD%
-go build -v server
-set GOPATH=%oldpath%
+pushd src
+pushd Server
+go install -v Server/server
+popd
+popd

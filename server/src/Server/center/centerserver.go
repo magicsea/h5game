@@ -4,7 +4,9 @@ import (
 	"gameproto/msgs"
 	"github.com/magicsea/ganet/log"
 	"github.com/magicsea/ganet/service"
+	"github.com/magicsea/ganet/util"
 	"reflect"
+	"time"
 
 	"github.com/AsynkronIT/protoactor-go/actor"
 )
@@ -36,12 +38,25 @@ func (s *CenterService) OnInit() {
 }
 
 func (s *CenterService) OnStart(as *service.ActorService) {
+
 	//as.RegisterMsg(reflect.TypeOf(&msgs.RemoveService{}), s.OnRemoveService)  //解注册服务器
 	as.RegisterMsg(reflect.TypeOf(&msgs.AddService{}), s.OnAddService)              //注册服务器
 	as.RegisterMsg(reflect.TypeOf(&actor.Terminated{}), s.OnChildServiceTerminated) //被动断开服务器
 	as.RegisterMsg(reflect.TypeOf(&msgs.UploadService{}), s.OnUpdateService)        //更新服务器
 	as.RegisterMsg(reflect.TypeOf(&msgs.ApplyService{}), s.OnApplyService)          //获取一个服务器
 	as.RegisterMsg(reflect.TypeOf(&msgs.GetTypeServices{}), s.GetTypeServices)      //获取一类服务器
+
+	as.RegisterMsg(reflect.TypeOf(&msgs.Tick{}), s.OnTick)
+	util.StartLoopTask(time.Second*time.Duration(5), s.Tick)
+	log.Debug("center OnStart ok!!")
+}
+func (s *CenterService) Tick() {
+	s.Pid.Tell(&msgs.Tick{})
+}
+
+
+func (s *CenterService) OnTick(context service.Context) {
+	log.Info("CenterService tick")
 }
 
 //注册服务器

@@ -13,7 +13,7 @@ import (
 
 	"github.com/AsynkronIT/protoactor-go/actor"
 	_ "github.com/AsynkronIT/protoactor-go/actor"
-	"github.com/go-redis/redis"
+	"github.com/go-redis/redis/v7"
 )
 
 type GameService struct {
@@ -55,6 +55,7 @@ func (s *GameService) OnStart(as *service.ActorService) {
 	//as.RegisterMsg(reflect.TypeOf(&PlayerInitEnd{}), s.OnPlayerInitEnd)       //玩家初始化完成
 	as.RegisterMsg(reflect.TypeOf(&msgs.AddServiceRep{}), s.OnRegOK)          //注册完成
 	as.RegisterMsg(reflect.TypeOf(&actor.Terminated{}), s.OnDisconnectCenter) //被动断开服务器
+	log.Debug("game OnStart ok!!")
 
 }
 
