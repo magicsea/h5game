@@ -6,8 +6,6 @@ io类型h5游戏，客户端使用ts版cocos creator。服务器使用golang act
 ## 客户端依赖
 
 - cocos creator 2.4.0
-  
-  
 
 ## 客户端已知问题：
 
@@ -18,19 +16,18 @@ io类型h5游戏，客户端使用ts版cocos creator。服务器使用golang act
 ## 服务器源码依赖
 
 ```
-go get github.com/AsynkronIT/protoactor-go  
-go get github.com/gorilla/websocket
-go get github.com/go-redis/redis
-go get github.com/magicsea/ganet
+已使用go mod管理包。
+golang版本1.13。
+拉去依赖步骤：
+1.进入server/src/Server目录
+2.执行ini_mod.bat 或者 go mod tidy
 ```
-
-==另外依赖protobuf,需要科学上网下载,没条件的下载我网盘里的[ google库](http://pan.baidu.com/s/1qYjUHJY)==
 
 ## 服务器运行
 
 - 安装数据库redis
 
-- 编译go install Server
+- 进入server目录，执行build.bat编译
 
 - 配置server/bin/config.json是数据库地址、服务器集群的配置地址
   
@@ -47,17 +44,23 @@ go get github.com/magicsea/ganet
 - 启动
   
   ```
-- windows 执行 StartSingleServer.bat(单进程方式) 或者 StartMultiServer.bat(多进程方式)
-- linux 执行./run.sh start
-  
-  ```
-  
+  windows ：
+  方法1：直接运行bin/server.exe 
+  方法2：执行 StartSingleServer.bat(单进程方式)
+  方法3：执行 StartMultiServer.bat(多进程方式)
+      
+  linux ：
+  执行./run.sh start
   ```
   
   ## TODO:
+
 - [x] 登录、聊天、个人信息修改、基本战斗
+
 - [x] behavoior接入
+
 - [x] tcp,websocket协议兼容。pb,json可选。
+
 - [ ] 移动降低发包，客户端平滑
 
 ## QQ群：285728047

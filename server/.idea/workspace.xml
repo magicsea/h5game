@@ -2,32 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6f5e79f9-5338-43d3-94b3-94c7fbe09650" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../ChessCardHall/assets/Script/vv.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../ChessCardHall/assets/Script/vv.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ChessCardHall/project.json" beforeDir="false" afterPath="$PROJECT_DIR$/../ChessCardHall/project.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ChessCardHall/settings/project.json" beforeDir="false" afterPath="$PROJECT_DIR$/../ChessCardHall/settings/project.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/server.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/StartMultiServer.bat" beforeDir="false" afterPath="$PROJECT_DIR$/bin/StartMultiServer.bat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.bat" beforeDir="false" afterPath="$PROJECT_DIR$/build.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/install.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/install.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Server/app/server.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Server/battle/battleserver.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/battle/battleserver.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Server/center/centerserver.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/center/centerserver.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Server/cluster/regcenter.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/cluster/regcenter.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Server/cluster/remoteclient.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/cluster/remoteclient.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Server/db/gameMD.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/db/gameMD.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Server/db/redismgr.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/db/redismgr.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Server/db/xredsql.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/db/xredsql.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Server/game/gameserver.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/game/gameserver.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Server/game/module_test.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Server/game/playerModuleBase.go_" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Server/game/playerShopModule.go_" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Server/gate/gateserver.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/gate/gateserver.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Server/lobby/lobbyserver.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/lobby/lobbyserver.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Server/login/loginserver.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/login/loginserver.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Server/session/sessionserver.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/session/sessionserver.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Robot/robotTest/_run.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/src/Robot/robotTest/_run.cmd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Robot/robotTest/build.bat" beforeDir="false" afterPath="$PROJECT_DIR$/src/Robot/robotTest/build.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Robot/robotTest/robot.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/Robot/robotTest/robot.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -49,10 +29,10 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="bat" value="69" />
-          <entry key="cmd" value="7" />
-          <entry key="go" value="913" />
-          <entry key="json" value="17" />
-          <entry key="mod" value="24" />
+          <entry key="cmd" value="9" />
+          <entry key="go" value="1073" />
+          <entry key="json" value="21" />
+          <entry key="mod" value="25" />
           <entry key="sh" value="17" />
           <entry key="txt" value="3" />
         </counts>
@@ -60,38 +40,38 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Bat" value="69" />
-          <entry key="Cmd" value="7" />
-          <entry key="DTD" value="24" />
-          <entry key="Go" value="913" />
-          <entry key="JSON" value="17" />
+          <entry key="Cmd" value="9" />
+          <entry key="DTD" value="25" />
+          <entry key="Go" value="1073" />
+          <entry key="JSON" value="21" />
           <entry key="PLAIN_TEXT" value="20" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="bat" value="16" />
-          <entry key="cmd" value="4" />
-          <entry key="go" value="175" />
+          <entry key="bat" value="18" />
+          <entry key="cmd" value="7" />
+          <entry key="go" value="195" />
           <entry key="go_" value="2" />
           <entry key="js" value="3" />
           <entry key="json" value="9" />
           <entry key="md" value="2" />
-          <entry key="mod" value="6" />
+          <entry key="mod" value="10" />
           <entry key="proto" value="4" />
           <entry key="sh" value="5" />
-          <entry key="sum" value="2" />
+          <entry key="sum" value="4" />
           <entry key="txt" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Bat" value="15" />
-          <entry key="Cmd" value="4" />
-          <entry key="DTD" value="6" />
-          <entry key="Go" value="175" />
+          <entry key="Bat" value="17" />
+          <entry key="Cmd" value="7" />
+          <entry key="DTD" value="10" />
+          <entry key="Go" value="195" />
           <entry key="JSON" value="9" />
           <entry key="JavaScript" value="3" />
-          <entry key="PLAIN_TEXT" value="13" />
+          <entry key="PLAIN_TEXT" value="15" />
           <entry key="PROTO" value="4" />
         </counts>
       </usages-collector>
@@ -107,93 +87,94 @@
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Server/gate/gateserver.go">
+            <entry file="file://$PROJECT_DIR$/src/Robot/robotTest/robot.go">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1709">
-                  <caret line="139" column="25" selection-start-line="139" selection-start-column="14" selection-end-line="139" selection-end-column="25" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Server/center/centerserver.go">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="223">
-                  <caret line="49" column="18" selection-start-line="49" selection-start-column="18" selection-end-line="49" selection-end-column="18" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Server/go.mod">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="340">
-                  <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Server/login/loginserver.go">
-              <provider selected="true" editor-type-id="text-editor" />
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Server/server/server.go">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="439">
-                  <caret line="49" column="10" selection-start-line="49" selection-start-column="10" selection-end-line="49" selection-end-column="10" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://D:/gopath/pkg/mod/github.com/magicsea/ganet@v0.0.0-20200721080758-d33e58ea37d8/app/app.go">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="350">
-                  <caret line="71" column="5" lean-forward="true" selection-start-line="71" selection-start-column="5" selection-end-line="71" selection-end-column="5" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://D:/gopath/pkg/mod/github.com/magicsea/ganet@v0.0.0-20200721080758-d33e58ea37d8/config/serviceConfig.go">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="296">
-                  <caret line="42" column="25" lean-forward="true" selection-start-line="42" selection-start-column="25" selection-end-line="42" selection-end-column="25" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Server/battle/battleserver.go">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="347">
-                  <caret line="81" column="45" selection-start-line="81" selection-start-column="45" selection-end-line="81" selection-end-column="45" />
+                <state relative-caret-position="349">
+                  <caret line="89" column="35" selection-start-line="89" selection-start-column="35" selection-end-line="89" selection-end-column="35" />
                   <folding>
-                    <element signature="e#16#231#0" expanded="true" />
+                    <element signature="e#14#224#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://D:/gopath/pkg/mod/github.com/magicsea/ganet@v0.0.0-20200721080758-d33e58ea37d8/util/tools.go">
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/Robot/robotTest/_run.cmd">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="102">
+                <state>
+                  <caret column="44" lean-forward="true" selection-start-column="44" selection-end-column="44" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://D:/gopath/pkg/mod/github.com/magicsea/ganet@v0.0.0-20200721080758-d33e58ea37d8/network/conn.go">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="68">
                   <caret line="6" column="5" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Server/center/serviceNode.go">
+            <entry file="file://D:/gopath/pkg/mod/github.com/magicsea/ganet@v0.0.0-20200721080758-d33e58ea37d8/network/tcp_conn.go">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="354">
-                  <caret line="48" column="24" selection-start-line="48" selection-start-column="24" selection-end-line="48" selection-end-column="24" />
-                  <folding>
-                    <element signature="e#16#90#0" expanded="true" />
-                  </folding>
+                <state relative-caret-position="357">
+                  <caret line="26" column="42" selection-start-line="26" selection-start-column="42" selection-end-line="26" selection-end-column="42" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://D:/Go/src/sync/waitgroup.go">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="175">
+                  <caret line="102" column="21" selection-start-line="102" selection-start-column="21" selection-end-line="102" selection-end-column="21" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/Robot/robotTest/robotTest.go">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="170">
+                  <caret line="14" column="16" lean-forward="true" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/Robot/robotTest/agent.go">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="189">
+                  <caret line="24" column="4" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://D:/gopath/pkg/mod/github.com/magicsea/ganet@v0.0.0-20200721080758-d33e58ea37d8/network/tcp_client.go">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="340">
+                  <caret line="27" column="4" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="4" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://D:/gopath/pkg/mod/github.com/magicsea/ganet@v0.0.0-20200721080758-d33e58ea37d8/network/ws_client.go">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="179">
+                  <caret line="20" column="4" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://D:/gopath/pkg/mod/github.com/magicsea/ganet@v0.0.0-20200721080758-d33e58ea37d8/network/ws_conn.go">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-1421">
+                  <caret line="13" column="5" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
                 </state>
               </provider>
             </entry>
@@ -205,8 +186,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/bin/config.json">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="279">
-                  <caret line="30" column="34" selection-start-line="30" selection-start-column="34" selection-end-line="30" selection-end-column="34" />
+                <state relative-caret-position="34">
+                  <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
                 </state>
               </provider>
             </entry>
@@ -217,13 +198,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>AddService</find>
-      <find>BattleService</find>
-      <find>Request</find>
-      <find>OnStart</find>
-      <find>actor</find>
-      <find>run服务</find>
-      <find>Starting</find>
       <find>Started EndpointManager</find>
       <find>log.Debug(&quot;center OnStart ok!!&quot;)</find>
       <find>OnStart ok!!</find>
@@ -247,6 +221,13 @@
       <find>CenterService tick</find>
       <find>center.OnAddService</find>
       <find>GetServiceConfig</find>
+      <find>client</find>
+      <find>INetClient</find>
+      <find>ConnectGate</find>
+      <find>newAgent</find>
+      <find>NewAgent</find>
+      <find>EnterGame</find>
+      <find>OnMsgRecv</find>
     </findStrings>
   </component>
   <component name="GOROOT" path="D:\go" />
@@ -283,8 +264,12 @@
         <option value="D:/gopath/pkg/mod/github.com/magicsea/ganet@v0.0.0-20200721080758-d33e58ea37d8/service/service.go" />
         <option value="$PROJECT_DIR$/src/Server/game/gameserver.go" />
         <option value="$PROJECT_DIR$/src/Server/center/centerserver.go" />
-        <option value="$PROJECT_DIR$/bin/config.json" />
         <option value="D:/gopath/pkg/mod/github.com/magicsea/ganet@v0.0.0-20200721080758-d33e58ea37d8/config/serviceConfig.go" />
+        <option value="$PROJECT_DIR$/src/Robot/go.mod" />
+        <option value="$PROJECT_DIR$/src/Robot/robotTest/build.bat" />
+        <option value="$PROJECT_DIR$/bin/config.json" />
+        <option value="$PROJECT_DIR$/src/Robot/robotTest/robot.go" />
+        <option value="$PROJECT_DIR$/src/Robot/robotTest/_run.cmd" />
       </list>
     </option>
   </component>
@@ -322,11 +307,6 @@
             <path>
               <item name="server" type="b2602c69:ProjectViewProjectNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="cofig" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
               <item name="pkg" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -341,33 +321,6 @@
               <item name="pkg" type="462c0819:PsiDirectoryNode" />
               <item name="mod" type="462c0819:PsiDirectoryNode" />
               <item name="github.com" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="pkg" type="462c0819:PsiDirectoryNode" />
-              <item name="mod" type="462c0819:PsiDirectoryNode" />
-              <item name="github.com" type="462c0819:PsiDirectoryNode" />
-              <item name="!asynkron!i!t" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="pkg" type="462c0819:PsiDirectoryNode" />
-              <item name="mod" type="462c0819:PsiDirectoryNode" />
-              <item name="github.com" type="462c0819:PsiDirectoryNode" />
-              <item name="!asynkron!i!t" type="462c0819:PsiDirectoryNode" />
-              <item name="protoactor-go@v0.0.0-20200317173033-c483abfa40e2" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="pkg" type="462c0819:PsiDirectoryNode" />
-              <item name="mod" type="462c0819:PsiDirectoryNode" />
-              <item name="github.com" type="462c0819:PsiDirectoryNode" />
-              <item name="!asynkron!i!t" type="462c0819:PsiDirectoryNode" />
-              <item name="protoactor-go@v0.0.0-20200317173033-c483abfa40e2" type="462c0819:PsiDirectoryNode" />
-              <item name="actor" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="server" type="b2602c69:ProjectViewProjectNode" />
@@ -405,14 +358,20 @@
               <item name="server" type="b2602c69:ProjectViewProjectNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Server" type="462c0819:PsiDirectoryNode" />
+              <item name="Robot" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Robot" type="462c0819:PsiDirectoryNode" />
+              <item name="robotTest" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="server" type="b2602c69:ProjectViewProjectNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Server" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="server" type="b2602c69:ProjectViewProjectNode" />
@@ -421,59 +380,24 @@
             <path>
               <item name="server" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Go Module &lt;Server&gt;" type="20ee2d1f:SyntheticLibraryElementNode" />
+              <item name="Go Module &lt;robotTest&gt;" type="20ee2d1f:SyntheticLibraryElementNode" />
             </path>
             <path>
               <item name="server" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Go Module &lt;Server&gt;" type="20ee2d1f:SyntheticLibraryElementNode" />
+              <item name="Go Module &lt;robotTest&gt;" type="20ee2d1f:SyntheticLibraryElementNode" />
               <item name="ganet@v0.0.0-20200721080758-d33e58ea37d8" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="server" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Go Module &lt;Server&gt;" type="20ee2d1f:SyntheticLibraryElementNode" />
-              <item name="ganet@v0.0.0-20200721080758-d33e58ea37d8" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Go Module &lt;Server&gt;" type="20ee2d1f:SyntheticLibraryElementNode" />
-              <item name="ganet@v0.0.0-20200721080758-d33e58ea37d8" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Go Module &lt;Server&gt;" type="20ee2d1f:SyntheticLibraryElementNode" />
-              <item name="ganet@v0.0.0-20200721080758-d33e58ea37d8" type="462c0819:PsiDirectoryNode" />
-              <item name="gateframework" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Go Module &lt;Server&gt;" type="20ee2d1f:SyntheticLibraryElementNode" />
+              <item name="Go Module &lt;robotTest&gt;" type="20ee2d1f:SyntheticLibraryElementNode" />
               <item name="ganet@v0.0.0-20200721080758-d33e58ea37d8" type="462c0819:PsiDirectoryNode" />
               <item name="network" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="server" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Go Module &lt;Server&gt;" type="20ee2d1f:SyntheticLibraryElementNode" />
-              <item name="ganet@v0.0.0-20200721080758-d33e58ea37d8" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Go Module &lt;Server&gt;" type="20ee2d1f:SyntheticLibraryElementNode" />
-              <item name="ganet@v0.0.0-20200721080758-d33e58ea37d8" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
               <item name="Go SDK 1.13.5" type="20ee2d1f:SyntheticLibraryElementNode" />
             </path>
             <path>
@@ -487,15 +411,7 @@
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
               <item name="Go SDK 1.13.5" type="20ee2d1f:SyntheticLibraryElementNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="net" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Go SDK 1.13.5" type="20ee2d1f:SyntheticLibraryElementNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="net" type="462c0819:PsiDirectoryNode" />
-              <item name="http" type="462c0819:PsiDirectoryNode" />
+              <item name="sync" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -537,7 +453,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Go Build.robot">
     <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
       <module name="server" />
       <working_directory value="D:\project\h5game\server\bin" />
@@ -546,6 +462,16 @@
       <filePath value="$PROJECT_DIR$/" />
       <package value="Server" />
       <directory value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
+    <configuration name="robot" type="GoApplicationRunConfiguration" factoryName="Go Application">
+      <module name="server" />
+      <working_directory value="D:\project\h5game\server\bin" />
+      <go_parameters value="-i" />
+      <kind value="DIRECTORY" />
+      <filePath value="$PROJECT_DIR$/" />
+      <package value="Server" />
+      <directory value="$PROJECT_DIR$/src/Robot/robotTest" />
       <method v="2" />
     </configuration>
     <configuration name="server" type="GoApplicationRunConfiguration" factoryName="Go Application">
@@ -558,6 +484,10 @@
       <directory value="$PROJECT_DIR$/src/Server/server" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Go Build.server" />
+      <item itemvalue="Go Build.robot" />
+    </list>
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -572,12 +502,12 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17910448" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17910448" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32899022" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32899022" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32899022" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3995657" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -585,7 +515,7 @@
       <window_info anchor="bottom" id="LuaCheck" order="7" weight="0.32899022" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32899022" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32899022" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -603,150 +533,19 @@
     <integration-enabled>true</integration-enabled>
     <proxy>https://goproxy.cn</proxy>
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/src/Robot/robotTest/robot.go</url>
+          <line>77</line>
+          <properties />
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Server/session/sessionManager.go">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bin/config_tcp_manager.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-27" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bin/StartMultiServer.bat">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="49" selection-start-column="17" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bin/config_tcp_game.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bin/config_tcp_gate.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="16" column="35" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/gopath/pkg/mod/github.com/!asynkron!i!t/protoactor-go@v0.0.0-20200317173033-c483abfa40e2/actor/actor_context.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="275" column="1" selection-start-line="275" selection-start-column="1" selection-end-line="275" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/gopath/pkg/mod/github.com/!asynkron!i!t/protoactor-go@v0.0.0-20200317173033-c483abfa40e2/remote/remote_process.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="30" selection-start-line="30" selection-end-line="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/gopath/pkg/mod/github.com/!asynkron!i!t/protoactor-go@v0.0.0-20200317173033-c483abfa40e2/remote/endpoint_manager.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="96" selection-start-line="96" selection-end-line="96" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/gopath/pkg/mod/github.com/!asynkron!i!t/protoactor-go@v0.0.0-20200317173033-c483abfa40e2/actor/root_context.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="128" selection-start-line="128" selection-end-line="128" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/gopath/pkg/mod/github.com/!asynkron!i!t/protoactor-go@v0.0.0-20200317173033-c483abfa40e2/remote/endpoint_writer_mailbox.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="36" selection-start-line="36" selection-end-line="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/gopath/pkg/mod/github.com/!asynkron!i!t/protoactor-go@v0.0.0-20200317173033-c483abfa40e2/actor/actor_process.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/gopath/pkg/mod/github.com/!asynkron!i!t/protoactor-go@v0.0.0-20200317173033-c483abfa40e2/actor/pid.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="49" column="1" selection-start-line="49" selection-start-column="1" selection-end-line="49" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pkg/mod/github.com/magicsea/ganet@v0.0.0-20200721080758-d33e58ea37d8/service/service.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="71" column="5" selection-start-line="71" selection-start-column="5" selection-end-line="71" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pkg/mod/github.com/magicsea/ganet@v0.0.0-20200721080758-d33e58ea37d8/app/app.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="80" column="29" selection-start-line="80" selection-start-column="29" selection-end-line="80" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pkg/mod/github.com/!asynkron!i!t/protoactor-go@v0.0.0-20200317173033-c483abfa40e2/remote/endpoint_manager.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="31" column="49" selection-start-line="31" selection-start-column="49" selection-end-line="31" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Server/cluster/cluster.go">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://D:/gopath/pkg/mod/github.com/magicsea/ganet@v0.0.0-20200721080758-d33e58ea37d8/log/loggroup.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="50" column="12" selection-start-line="50" selection-start-column="12" selection-end-line="50" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/Go/src/log/log.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="61" column="43" selection-start-line="61" selection-start-column="39" selection-end-line="61" selection-end-column="43" />
-          <folding>
-            <element signature="e#842#898#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/gopath/pkg/mod/github.com/magicsea/ganet@v0.0.0-20200721080758-d33e58ea37d8/log/log.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="77">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Server/session/sessionserver.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="48" column="8" selection-start-line="48" selection-start-column="8" selection-end-line="48" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pkg/mod/github.com/!asynkron!i!t/protoactor-go@v0.0.0-20200317173033-c483abfa40e2/remote/server.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="50" column="19" selection-start-line="50" selection-start-column="19" selection-end-line="50" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pkg/mod/github.com/!asynkron!i!t/protoactor-go@v0.0.0-20200317173033-c483abfa40e2/actor/spawn.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pkg/mod/github.com/!asynkron!i!t/protoactor-go@v0.0.0-20200317173033-c483abfa40e2/actor/root_context.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="325">
@@ -827,13 +626,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://D:/gopath/pkg/mod/github.com/magicsea/ganet@v0.0.0-20200721080758-d33e58ea37d8/network/ws_server.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="69" selection-start-line="69" selection-end-line="69" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://D:/gopath/pkg/mod/github.com/magicsea/ganet@v0.0.0-20200721080758-d33e58ea37d8/service/service.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
@@ -852,13 +644,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
           <caret line="20" column="22" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Server/game/gameserver.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="80" column="39" selection-start-line="80" selection-start-column="36" selection-end-line="80" selection-end-column="39" />
         </state>
       </provider>
     </entry>
@@ -911,13 +696,6 @@
     <entry file="file://$PROJECT_DIR$/src/Server/vendor/modules.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Server/go.mod">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Server/login/loginserver.go">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -928,24 +706,170 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bin/config.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="30" column="34" selection-start-line="30" selection-start-column="34" selection-end-line="30" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://D:/gopath/pkg/mod/github.com/magicsea/ganet@v0.0.0-20200721080758-d33e58ea37d8/app/app.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="350">
-          <caret line="71" column="5" lean-forward="true" selection-start-line="71" selection-start-column="5" selection-end-line="71" selection-end-column="5" />
+          <caret line="71" column="5" selection-start-line="71" selection-start-column="5" selection-end-line="71" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://D:/gopath/pkg/mod/github.com/magicsea/ganet@v0.0.0-20200721080758-d33e58ea37d8/config/serviceConfig.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="42" column="25" lean-forward="true" selection-start-line="42" selection-start-column="25" selection-end-line="42" selection-end-column="25" />
+        <state relative-caret-position="265">
+          <caret line="58" column="5" selection-start-line="58" selection-start-column="5" selection-end-line="58" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Server/cluster/cluster.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="41" column="5" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Server/game/gameserver.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="78" column="32" selection-start-line="78" selection-start-column="32" selection-end-line="78" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Robot/go.sum">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Server/go.sum">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/go.mod">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gameproto/go.mod">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.bat">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Server/go.mod">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" selection-start-line="5" selection-end-line="6" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Robot/go.mod">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Robot/robotTest/build.bat">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="11" lean-forward="true" selection-start-column="11" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/gopath/pkg/mod/github.com/magicsea/ganet@v0.0.0-20200721080758-d33e58ea37d8/network/agent.go">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://D:/gopath/pkg/mod/github.com/magicsea/ganet@v0.0.0-20200721080758-d33e58ea37d8/network/tcp_server.go">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://D:/gopath/pkg/mod/github.com/magicsea/ganet@v0.0.0-20200721080758-d33e58ea37d8/network/ws_server.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="333">
+          <caret line="68" column="37" lean-forward="true" selection-start-line="68" selection-start-column="37" selection-end-line="68" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Robot/robotTest/r_test.go">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pkg/mod/github.com/magicsea/ganet@v0.0.0-20200721080758-d33e58ea37d8/network/ws_client.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-160">
+          <caret line="42" selection-start-line="42" selection-end-line="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Go/src/sync/waitgroup.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="102" column="21" selection-start-line="102" selection-start-column="21" selection-end-line="102" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/gopath/pkg/mod/github.com/magicsea/ganet@v0.0.0-20200721080758-d33e58ea37d8/network/tcp_client.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="27" column="4" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/gopath/pkg/mod/github.com/magicsea/ganet@v0.0.0-20200721080758-d33e58ea37d8/network/ws_conn.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1421">
+          <caret line="13" column="5" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/gopath/pkg/mod/github.com/magicsea/ganet@v0.0.0-20200721080758-d33e58ea37d8/network/tcp_conn.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="26" column="42" selection-start-line="26" selection-start-column="42" selection-end-line="26" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/gopath/pkg/mod/github.com/magicsea/ganet@v0.0.0-20200721080758-d33e58ea37d8/network/conn.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="6" column="5" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/gopath/pkg/mod/github.com/magicsea/ganet@v0.0.0-20200721080758-d33e58ea37d8/network/ws_client.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="20" column="4" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Robot/robotTest/agent.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="24" column="4" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/config.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Robot/robotTest/robot.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="349">
+          <caret line="89" column="35" selection-start-line="89" selection-start-column="35" selection-end-line="89" selection-end-column="35" />
+          <folding>
+            <element signature="e#14#224#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Robot/robotTest/robotTest.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="14" column="16" lean-forward="true" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Robot/robotTest/_run.cmd">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="44" lean-forward="true" selection-start-column="44" selection-end-column="44" />
         </state>
       </provider>
     </entry>

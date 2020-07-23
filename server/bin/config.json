@@ -11,7 +11,7 @@
 	},
 	"config":{
 		"log":{
-			"level":"debug",
+			"level":"info",
 			"path":"log",
 			"flag":18
 		},
