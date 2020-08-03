@@ -14,9 +14,7 @@ import (
 
 	"github.com/gogo/protobuf/proto"
 )
-type INetClient interface {
-	Start()
-}
+
 type Robot struct {
 	account string
 	pwd     string
@@ -25,7 +23,7 @@ type Robot struct {
 	uid      uint64
 	key      string
 
-	client INetClient
+	client network.INetClient
 	agent  *Agent
 	wg     sync.WaitGroup
 }
@@ -74,7 +72,7 @@ func (robot *Robot) Login() bool {
 	return result.GetResult() == int32(gameproto.OK)
 }
 
-func (robot *Robot) newAgent(conn *network.WSConn) network.Agent {
+func (robot *Robot) newAgent(conn network.Conn) network.Agent {
 	robot.agent = new(Agent)
 	robot.agent.conn = conn
 	robot.agent.msgHandle = robot.OnMsgRecv
@@ -85,23 +83,16 @@ func (robot *Robot) newAgent(conn *network.WSConn) network.Agent {
 func (robot *Robot) ConnectGate() {
 	fmt.Println("ConnectGate:", robot.gateAddr)
 	if *nettype == "ws" {
-		c:= new(network.WSClient)
-		c.Addr = robot.gateAddr
-		c.NewAgent = robot.newAgent
-
-		robot.client = c
-		robot.client.Start()
-
+		robot.client = new(network.WSClient)
 	} else {
-		panic("not support tcp")
-		//c := new(network.TCPClient)
-		//c.LittleEndian = true
-		//robot.client = c
-		//robot.client.Start()
+		c := new(network.TCPClient)
+		c.LittleEndian = true
+		robot.client = c
 	}
-	//robot.client.Set(robot.gateAddr, robot.newAgent)
+	robot.client.Set(robot.gateAddr, robot.newAgent)
 
 	//robot.client.LittleEndian = true
+	robot.client.Start()
 
 }
 

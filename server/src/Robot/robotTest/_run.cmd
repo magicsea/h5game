@@ -1,1 +1,1 @@
-robotTest.exe -u=magicse_1 -net=tcp -proto=pb
+robotTest.exe -u=magicse_1 -net=ws -proto=pb
