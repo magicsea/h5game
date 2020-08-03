@@ -18,9 +18,9 @@ io类型h5游戏，客户端使用ts版cocos creator。服务器使用golang act
 ```
 已使用go mod管理包。
 golang版本1.13。
-拉去依赖步骤：
+拉取依赖步骤：
 1.进入server/src/Server目录
-2.执行ini_mod.bat 或者 go mod tidy
+2.执行go mod tidy
 ```
 
 ## 服务器运行
