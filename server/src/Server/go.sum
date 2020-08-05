@@ -927,6 +927,8 @@ github.com/magicsea/behavior3go v0.0.0-20200622063830-4cf5449990a7 h1:15/pWvZiTf
 github.com/magicsea/behavior3go v0.0.0-20200622063830-4cf5449990a7/go.mod h1:YPRcRdnDiwdQrUzMm9d07cMhCOTzdquY5iKbNBEAhSk=
 github.com/magicsea/ganet v0.0.0-20200721080758-d33e58ea37d8 h1:iN13kQxCzDfV739aBQ0hXhJb2+oBi3CPmFCaQpVcx5Q=
 github.com/magicsea/ganet v0.0.0-20200721080758-d33e58ea37d8/go.mod h1:cPIqHZJ4Xb2n5x1p0EV66o9LS60hW/PUUSYwSZDfbhE=
+github.com/magicsea/ganet v0.0.0-20200803062315-0bb3f3f0ce0b h1:xlQpZ8sZ7wvTX1YEmvCLpljoYJkQiOGQrGoMNBpvcwc=
+github.com/magicsea/ganet v0.0.0-20200803062315-0bb3f3f0ce0b/go.mod h1:cPIqHZJ4Xb2n5x1p0EV66o9LS60hW/PUUSYwSZDfbhE=
 github.com/mailru/easyjson v0.0.0-20160728113105-d5b7844b561a/go.mod h1:C1wdFJiN94OJF2b5HbByQZoLdCWB1Yqtg26g4irojpc=
 github.com/markbates/deplist v1.0.4/go.mod h1:gRRbPbbuA8TmMiRvaOzUlRfzfjeCCBqX2A6arxN01MM=
 github.com/markbates/deplist v1.0.5/go.mod h1:gRRbPbbuA8TmMiRvaOzUlRfzfjeCCBqX2A6arxN01MM=

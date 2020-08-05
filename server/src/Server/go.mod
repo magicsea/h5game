@@ -11,7 +11,7 @@ require (
 	github.com/go-redis/redis/v7 v7.4.0
 	github.com/gogo/protobuf v1.3.1
 	github.com/magicsea/behavior3go v0.0.0-20200622063830-4cf5449990a7
-	github.com/magicsea/ganet v0.0.0-20200721080758-d33e58ea37d8
+	github.com/magicsea/ganet v0.0.0-20200803062315-0bb3f3f0ce0b
 )
 
 replace (
