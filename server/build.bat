@@ -1,5 +1,5 @@
 pushd src
 pushd Server
-go install -v Server/server
+go build -v -o ../../bin Server/server
 popd
 popd
