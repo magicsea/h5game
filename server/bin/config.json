@@ -12,7 +12,7 @@
 	"config":{
 		"log":{
 			"level":"info",
-			"path":"log",
+			"path":"../log",
 			"flag":18
 		},
 		"proto":"json",

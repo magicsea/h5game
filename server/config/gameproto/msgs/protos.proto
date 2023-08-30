@@ -1,0 +1,383 @@
+syntax = "proto3";
+package msgs;
+import "github.com/AsynkronIT/protoactor-go/actor/protos.proto";
+
+import "share.proto";
+//==========Login===========
+//登入游戏验证
+message CheckLogin {
+	uint64 uid = 1;
+	string key = 2;
+}
+message HeartBeatMsg {
+}
+
+//=========shop=============
+enum ShopMsgType {
+	C2S_ShopBuy = 0;
+	S2C_ShopBuy = 1;
+	C2S_ShopSell = 2;
+	S2C_ShopSell = 3;
+}
+
+message C2S_ShopBuyMsg {
+	uint32 itemId = 1;
+}
+message S2C_ShopBuyMsg {
+	uint32 itemId = 1;
+	GAErrorCode result = 2;
+}
+//=========bag==============
+enum BagMsgType {
+	S2C_Bag = 0;
+}
+
+
+
+
+
+//客户端消息转rpc通用消息
+message FrameMsg {
+	ChannelType channel = 1;
+	uint32 msgId  = 2;
+	bytes rawData = 3;
+	uint64 uid = 4;
+}
+message FrameMsgJson {
+	ChannelType channel = 1;
+	string msgId  = 2;
+	bytes rawData = 3;
+	uint64 uid = 4;
+}
+
+message FrameMsgReq {
+	FrameMsg frame = 1;
+	uint32 cno  = 2;
+}
+message FrameMsgRep {
+	//uint32 msgId  = 1;
+	//uint32 cno  = 2;
+	GAErrorCode errCode = 1;
+}
+//gate发送协议
+//单
+message UnicastFrameMsg {
+	FrameMsg frameMsg = 1;
+	uint64 target = 2;
+}
+//组
+message MulticastFrameMsg {
+	FrameMsg frameMsg = 1;
+	repeated uint64 targets = 2;
+}
+//广播
+message BroadcastFrameMsg {
+	FrameMsg frameMsg = 1;
+}
+
+message BroadcastFrameMsgJson {
+	FrameMsgJson frameMsg = 1;
+}
+
+//加入到管理
+message AddAgentToParent {
+	uint64 uid = 1;
+	actor.PID sender = 2;
+}
+//移除管理
+message RemoveAgentFromParent {
+	uint64 uid = 1;
+}
+
+message NewChild {
+
+}
+message NewChildResult {
+	actor.PID pid = 1;
+}
+
+message Connect {
+    actor.PID Sender = 1;
+}
+
+message Connected {
+    string Message = 1;
+}
+
+message SpawnAgent {
+	
+}
+
+//服务器状态
+enum ServiceState {
+	ServiceStateFree = 0;
+	ServiceFull = 1;
+	ServiceStop = 2;
+}
+
+message ServiceValue {
+	string Key = 1;
+	string Value = 2;
+}
+//注册服务器
+message AddService {
+	string serviceName = 1;
+	string serviceType = 2;
+	actor.PID pid = 3;
+	repeated ServiceValue values = 4;
+}
+
+message AddServiceRep {
+	GAErrorCode result = 1;
+}
+//发送成功的通用返回
+message SendOK {	
+}
+//解注册服务器
+message RemoveService {
+	string serviceName = 1;
+	string serviceType = 2;
+}
+//分配服务器
+message ApplyService {
+	string serviceType = 1;
+}
+
+//分配服务器,返回
+message ApplyServiceResult {
+	string serviceType = 1;
+	string serviceName = 2;
+	actor.PID pid = 3;
+	repeated ServiceValue values = 4;
+	GAErrorCode result = 5;
+}
+//分配所有服务器
+message GetTypeServices {
+	string serviceType = 1;
+}
+
+message GetTypeServicesResult {
+	repeated actor.PID pids = 1;
+}
+
+//长传更新服务器信息
+message UploadService {
+	string serviceName = 1;
+	uint32 load = 2;
+	ServiceState state = 3;
+}
+
+
+//登录
+message UserLogin {
+	string account = 1;
+	uint64 uid = 2;
+}
+
+
+//获取玩家session信息
+message GetSessionInfo {
+	uint64  uid  = 1;
+}
+message GetSessionInfoByName {
+	string name = 1;
+}
+message GetSessionInfoResult {
+	UserBaseInfo userInfo = 1;
+	actor.PID agentPID = 2;
+	GAErrorCode result = 3;
+}
+
+//玩家断线
+message ClientDisconnect {
+}
+//gate收到消息
+message ReceviceClientMsg {
+	bytes rawdata = 1;
+}
+//玩家离开
+message UserLeave {
+	uint64 uid = 1;
+	ServerType from = 2;
+	string reason = 3;
+}
+
+//踢下线
+message Kick {
+	uint64 uid = 1;
+	string reason = 2;
+}
+
+//服务器check
+message ServerCheckLogin {
+	uint64 uid = 1;
+	string key = 2;
+	actor.PID agentPID = 3;
+}
+
+//服务器绑定信息
+message UserBindServer {
+	ChannelType channel = 1;
+	actor.PID pid = 2;
+}
+
+//人物基本信息
+message UserBaseInfo {
+	string account = 1;
+	string name = 2;
+	uint64 uid = 3;
+	uint64 lv = 4;
+	uint64 exp = 5;
+	uint64 exptime = 6;
+}
+//验证结果
+message CheckLoginResult {
+	GAErrorCode result = 1;
+	UserBaseInfo baseInfo = 2;
+	repeated UserBindServer bindServers = 3;
+}
+
+//创建玩家
+message CreatePlayer {
+	uint64 uid = 1;
+	actor.PID agentPID = 2;
+	actor.PID sender = 3;
+	actor.PID gatePID = 4;
+	string key = 5;
+}
+message CreatePlayerResult {
+	GAErrorCode result = 1;
+	UserBaseInfo baseInfo = 2;
+	actor.PID playerPID = 3;//gs的player地址
+	CreatePlayer transData = 4;
+	actor.PID roomPID = 5;//battle的player地址
+}
+
+//掉线
+message PlayerOutline {
+	string reason = 1;
+}
+
+//心跳
+message Tick {
+} 
+
+
+//定时刷新
+message TimeFlush {
+}
+
+message BattleRoomInfo {
+	uint64 uid = 1;
+	int32 rtype = 2;
+	int32 boss = 3;
+	string key = 4;
+	int32 hero = 5;
+	repeated string card = 6;
+	repeated int32 equip = 7;
+	string name = 8;
+	int32 lv = 9;
+	int32 ai = 10;
+}
+
+
+message GetLobbyInfo {
+}
+
+
+message LobbyQueueData {
+	int32 type = 1;
+	int32 num = 2;
+}
+message BattleServerData {
+	string addr = 1;
+	int32 num = 2;
+	int32 state = 3;
+}
+message GetLobbyInfoResult {
+	repeated LobbyQueueData queuedata = 1;
+	repeated BattleServerData battleServerData = 2;
+}
+
+message GetBattleServer {
+	uint64 uid = 1;
+	int32 rtype = 2;
+	int32 boss = 3;
+	//bytes roomInfo = 4;
+	uint64 oppuid = 4;
+	actor.PID selfPID = 5;
+}
+
+message GetBattleServerResult {
+	actor.PID battlePID = 1;
+	string roomId = 2;
+	GAErrorCode result = 3;
+}
+
+message JoinBattleQueue {
+	uint64 uid = 1;
+	int32 rtype = 2;
+	bytes roomInfo = 3;
+	actor.PID sender = 4;
+	int32 aiNum = 5;
+}
+
+message JoinBattleQueueResult {
+	uint64 waittime = 1;
+	GAErrorCode result = 2;
+}
+
+message LeaveBattleQueue {
+	uint64 uid = 1;
+}
+
+message MatchBattle {
+	string battleAddr = 1;
+	string roomId = 2;
+	uint64 uid = 3;
+	int32 rtype = 4;
+	bytes roomInfo = 5;
+	GAErrorCode result = 6;
+	actor.PID roomPID = 7;
+}
+
+
+message CreateBattlePlayer {
+	uint64 uid = 1;
+	string name = 2;
+	int32 skin = 3;
+	actor.PID agentPID = 4;
+	actor.PID playerPID = 5;
+}
+
+message CreateBattle {
+	string roomId = 1;
+	int32 stageId = 2;
+	int32 rtype = 3;	
+	repeated CreateBattlePlayer players = 4;
+}
+message CreateBattleRep {
+	actor.PID roomPID = 1;
+	GAErrorCode result = 2;
+}
+
+message JoinBattle {
+	string roomId = 1;
+	CreateBattlePlayer player = 2;
+}
+
+message AttachBattle {
+	actor.PID roomPID = 1;
+}
+
+message DetachBattle {
+}
+
+message RecoverBattle {
+	uint64 uid = 1;
+	actor.PID agentPID = 2;
+}
+message RecoverBattleRep {
+	actor.PID roomPID = 1;
+	GAErrorCode result = 2;
+}
